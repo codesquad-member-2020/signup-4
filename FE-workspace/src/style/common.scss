@@ -1,3 +1,6 @@
+body {
+  background: $color-gray;
+}
 #header {
   padding: 50px 0;
 }
@@ -5,7 +8,7 @@
   width: $inner-width;
   margin: 0 auto;
 }
-.contents { 
+.contents {
   width: $inner-width;
   margin: 0 auto;
   .row {
@@ -18,12 +21,14 @@
   background: $color-gray;
 }
 
-.title { 
+.title {
   font-size: $font-size-title;
   color: $color-ci;
   text-align: center;
 }
 .info-msg {
+  display: block;
+  margin: 5px auto;
   font-size: $font-size-small;
   color: $color-ci;
   &.error {
@@ -43,8 +48,8 @@
   font-size: $font-size-default;
   &.btn-reset,
   &.btn-submit {
-    color:$color-white;
-    border:0;
-    background:$color-ci;
+    color: $color-white;
+    border: 0;
+    background: $color-ci;
   }
 }

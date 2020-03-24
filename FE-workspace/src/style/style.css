@@ -183,6 +183,10 @@ button {
   height: 50px;
 }
 
+body {
+  background: #f2f4f7;
+}
+
 #header {
   padding: 50px 0;
 }
@@ -214,6 +218,8 @@ button {
 }
 
 .info-msg {
+  display: block;
+  margin: 5px auto;
   font-size: 12px;
   color: #00c84f;
 }
