@@ -14,9 +14,6 @@ public class ExceptionController {
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = BadRequestException.class)
     public Result unauthorizedException() {
-        System.out.println("-------------------------------");
-        Result result = Result.fail("요청을 잘못 보내셨습니다. ");
-        System.out.println(result);
-        return result;
+        return Result.fail("요청을 잘못 보내셨습니다. ");
     }
 }

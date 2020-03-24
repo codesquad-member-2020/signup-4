@@ -5,7 +5,6 @@ import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
 import com.codesquad.signup4.exception.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,8 +28,21 @@ public class APIUserController {
             throw new BadRequestException();
         }
 
-        if(id.equals("1234")) {
+        if(id.equals("testUserId")) {
             return Result.fail("중복된 아이디입니다.");
+        }
+
+        return Result.ok();
+    }
+
+    @GetMapping("/checkMobile")
+    public Result checkMobile(@RequestParam String mobileNumber) {
+        if(mobileNumber == null) {
+            throw new BadRequestException();
+        }
+
+        if(mobileNumber.equals("01012341234")) {
+            return Result.fail("중복된 번호입니다.");
         }
 
         return Result.ok();
