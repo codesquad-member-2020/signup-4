@@ -15,7 +15,7 @@ public class User {
   private String email;
 
 
-  @MappedCollection(idColumn = "user_id", keyColumn = "user_key")
+  @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
   private List<Interest> interest;
 
   @Override
@@ -35,7 +35,6 @@ public class User {
     this.userId = userId;
     this.password = password;
     this.email = email;
-    this.interest = interest;
   }
 
   public static User create(String userId, String password, String email) {

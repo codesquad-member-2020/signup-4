@@ -13,6 +13,6 @@ create table interest
     id bigint auto_increment primary key ,
     user_id bigint references user(id),
     interest_name varchar,
-    user_key int
+    interest_key int
 )
 
