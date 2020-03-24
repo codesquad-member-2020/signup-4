@@ -1,0 +1,50 @@
+#header {
+  padding: 50px 0;
+}
+.inner {
+  width: $inner-width;
+  margin: 0 auto;
+}
+.contents { 
+  width: $inner-width;
+  margin: 0 auto;
+  .row {
+    overflow: hidden;
+    margin: 15px 0;
+  }
+}
+#footer {
+  padding: 50px 0;
+  background: $color-gray;
+}
+
+.title { 
+  font-size: $font-size-title;
+  color: $color-ci;
+  text-align: center;
+}
+.info-msg {
+  font-size: $font-size-small;
+  color: $color-ci;
+  &.error {
+    color: $color-error;
+  }
+}
+.btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  &.half {
+    button {
+      width: calc(50% - 5px);
+    }
+  }
+}
+.btn {
+  font-size: $font-size-default;
+  &.btn-reset,
+  &.btn-submit {
+    color:$color-white;
+    border:0;
+    background:$color-ci;
+  }
+}
