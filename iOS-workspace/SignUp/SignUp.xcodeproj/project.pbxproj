@@ -15,7 +15,7 @@
 		AB958D4A2429000100C75714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB958D482429000100C75714 /* LaunchScreen.storyboard */; };
 		AB958D552429000200C75714 /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D542429000200C75714 /* SignUpTests.swift */; };
 		AB958D602429000200C75714 /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D5F2429000200C75714 /* SignUpUITests.swift */; };
-		AB958D732429ED7500C75714 /* infoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D722429ED7500C75714 /* infoTextField.swift */; };
+		AB958D732429ED7500C75714 /* InfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D722429ED7500C75714 /* InfoTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		AB958D5B2429000200C75714 /* SignUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB958D5F2429000200C75714 /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
 		AB958D612429000200C75714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB958D722429ED7500C75714 /* infoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoTextField.swift; sourceTree = "<group>"; };
+		AB958D722429ED7500C75714 /* InfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 		AB958D6F2429CF6C00C75714 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AB958D722429ED7500C75714 /* infoTextField.swift */,
+				AB958D722429ED7500C75714 /* InfoTextField.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 			files = (
 				AB958D422428FFFE00C75714 /* SignUpViewController.swift in Sources */,
 				AB958D3E2428FFFE00C75714 /* AppDelegate.swift in Sources */,
-				AB958D732429ED7500C75714 /* infoTextField.swift in Sources */,
+				AB958D732429ED7500C75714 /* InfoTextField.swift in Sources */,
 				AB958D402428FFFE00C75714 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
