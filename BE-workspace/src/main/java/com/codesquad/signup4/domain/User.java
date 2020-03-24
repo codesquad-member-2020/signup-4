@@ -10,26 +10,23 @@ public class User {
 
   @Id
   private Long id;
+
   private String userId;
+
   private String password;
+
   private String email;
 
+  private String gender;
+
+  private String username;
+
+  private String birthDay;
+
+  private String mobile;
 
   @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
   private List<Interest> interest;
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    User user = (User) o;
-    return Objects.equals(id, user.id);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id);
-  }
 
   User(String userId, String password, String email) {
     this.userId = userId;
@@ -43,6 +40,22 @@ public class User {
 
   public void addInterest(List<Interest> interest) {
     this.interest = interest;
+  }
+
+  public String getGender() {
+    return gender;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public String getBirthDay() {
+    return birthDay;
+  }
+
+  public String getMobile() {
+    return mobile;
   }
 
   public List<Interest> getInterest() {
@@ -88,7 +101,24 @@ public class User {
             ", userId='" + userId + '\'' +
             ", password='" + password + '\'' +
             ", email='" + email + '\'' +
+            ", gender='" + gender + '\'' +
+            ", username='" + username + '\'' +
+            ", birthDay='" + birthDay + '\'' +
+            ", mobile='" + mobile + '\'' +
             ", interest=" + interest +
             '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    User user = (User) o;
+    return Objects.equals(id, user.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id);
   }
 }
