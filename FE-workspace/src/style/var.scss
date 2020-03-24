@@ -1,4 +1,5 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+
 /* Layout */
 $inner-width: 1000px;
 $inner-width-small: $inner-width / 2;
@@ -11,7 +12,8 @@ $color-error: #e65f3e;
 $color-gray: #f2f4f7;
 
 /* Font-family */
-$font-family-default: 'Spoqa Han Sans', sans-serif;
+$font-family-default: "Noto Sans KR", "AppleSDGothicNeo-Regular", "맑은 고딕",
+  "Malgun Gothic", "돋움", "dotum" sans-serif;
 
 /* Font-size */
 $font-size-default: 14px;
