@@ -1,7 +1,10 @@
 package com.codesquad.signup4.domain;
-import java.util.HashSet;
-import java.util.Set;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
+
+import java.util.List;
+import java.util.Objects;
 
 public class User {
 
@@ -10,22 +13,42 @@ public class User {
   private String userId;
   private String password;
   private String email;
-  //private Set<Interest> interest = new HashSet<>();
 
-  User(Long id, String userId, String password, String email) {
-    this.id = id;
+
+  @MappedCollection(idColumn = "user_id", keyColumn = "user_key")
+  private List<Interest> interest;
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    User user = (User) o;
+    return Objects.equals(id, user.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id);
+  }
+
+  User(String userId, String password, String email) {
     this.userId = userId;
     this.password = password;
     this.email = email;
+    this.interest = interest;
   }
 
   public static User create(String userId, String password, String email) {
-    return new User(null, userId, password, email);
+    return new User(userId, password, email);
   }
 
-//  public void addInterest(Interest interest) {
-//    this.interest.add(interest);
-//  }
+  public void addInterest(List<Interest> interest) {
+    this.interest = interest;
+  }
+
+  public List<Interest> getInterest() {
+    return interest;
+  }
 
   public Long getId() {
     return id;
@@ -59,11 +82,14 @@ public class User {
     this.email = email;
   }
 
-//  public Set<Interest> getInterest() {
-//    return interest;
-//  }
-//
-//  public void setInterest(Set<Interest> interest) {
-//    this.interest = interest;
-//  }
+  @Override
+  public String toString() {
+    return "User{" +
+            "id=" + id +
+            ", userId='" + userId + '\'' +
+            ", password='" + password + '\'' +
+            ", email='" + email + '\'' +
+            ", interest=" + interest +
+            '}';
+  }
 }
