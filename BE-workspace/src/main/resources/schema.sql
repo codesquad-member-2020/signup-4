@@ -9,7 +9,7 @@ create table user (
     username varchar,
     gender varchar,
     mobile varchar,
-    birthDate varchar,
+    birthDate varchar
 );
 
 create table interest
