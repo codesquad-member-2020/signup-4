@@ -3,6 +3,27 @@ body {
 }
 #header {
   padding: 50px 0;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size:$font-size-extra;
+    span {
+      margin-left: 5px;
+    }
+  }
+  .title {
+    width: 100%;
+  }
+  nav {
+    ul {
+      display: flex;
+    }
+    li {
+      margin-left: 10px;
+    }
+  }
 }
 .inner {
   width: $inner-width;
@@ -15,9 +36,16 @@ body {
     overflow: hidden;
     margin: 15px 0;
   }
+  &.main {
+    text-align: center;
+    height: 50vh;
+    margin-top: 20vh;
+    font-size:$font-size-title;
+  }
 }
 #footer {
   padding: 50px 0;
+  text-align: center;
   background: $color-gray;
 }
 

@@ -122,9 +122,9 @@ input[type="password"]::placeholder,
 input[type="date"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder {
-  font-weight: bold;
+  font-weight: normal;
   font-size: $font-size-default;
-  color: $color-default;
+  color: #ccc;
 }
 select {
   width: 100%;

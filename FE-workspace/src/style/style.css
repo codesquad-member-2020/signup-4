@@ -131,9 +131,9 @@ input[type="password"]::-webkit-input-placeholder,
 input[type="date"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="tel"]::-webkit-input-placeholder {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
-  color: #252525;
+  color: #ccc;
 }
 
 input[type="text"]:-ms-input-placeholder,
@@ -141,9 +141,9 @@ input[type="password"]:-ms-input-placeholder,
 input[type="date"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
-  color: #252525;
+  color: #ccc;
 }
 
 input[type="text"]::-ms-input-placeholder,
@@ -151,9 +151,9 @@ input[type="password"]::-ms-input-placeholder,
 input[type="date"]::-ms-input-placeholder,
 input[type="email"]::-ms-input-placeholder,
 input[type="tel"]::-ms-input-placeholder {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
-  color: #252525;
+  color: #ccc;
 }
 
 input[type="text"]::placeholder,
@@ -161,9 +161,9 @@ input[type="password"]::placeholder,
 input[type="date"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 14px;
-  color: #252525;
+  color: #ccc;
 }
 
 select {
@@ -191,6 +191,37 @@ body {
   padding: 50px 0;
 }
 
+#header .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#header .logo {
+  font-size: 18px;
+}
+
+#header .logo span {
+  margin-left: 5px;
+}
+
+#header .title {
+  width: 100%;
+}
+
+#header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header nav li {
+  margin-left: 10px;
+}
+
 .inner {
   width: 1000px;
   margin: 0 auto;
@@ -206,8 +237,16 @@ body {
   margin: 15px 0;
 }
 
+.contents.main {
+  text-align: center;
+  height: 50vh;
+  margin-top: 20vh;
+  font-size: 49px;
+}
+
 #footer {
   padding: 50px 0;
+  text-align: center;
   background: #f2f4f7;
 }
 
@@ -259,4 +298,8 @@ body {
   display: block;
   margin: 15px 0 5px;
   font-weight: bold;
+}
+
+.login {
+  width: 500px;
 }
