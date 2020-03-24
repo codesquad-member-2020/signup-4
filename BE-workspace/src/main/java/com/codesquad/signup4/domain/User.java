@@ -21,25 +21,25 @@ public class User {
 
     private String username;
 
-    private String birthDay;
+    private String birthDate;
 
     private String mobile;
 
     @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
     private List<Interest> interest;
 
-    public User(String userId, String password, String email, String gender, String username, String birthDay, String mobile) {
+    public User(String userId, String password, String email, String gender, String username, String birthDate, String mobile) {
         this.userId = userId;
         this.password = password;
         this.email = email;
         this.gender = gender;
         this.username = username;
-        this.birthDay = birthDay;
+        this.birthDate = birthDate;
         this.mobile = mobile;
     }
 
-    public static User create(String userId, String password, String email, String gender, String username, String birthDay, String mobile) {
-        return new User(userId, password, email, gender, username, birthDay, mobile);
+    public static User create(String userId, String password, String email, String gender, String username, String birthDate, String mobile) {
+        return new User(userId, password, email, gender, username, birthDate, mobile);
     }
 
     public void addInterest(List<Interest> interest) {
@@ -54,8 +54,8 @@ public class User {
         return username;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public String getBirthDate() {
+        return birthDate;
     }
 
     public String getMobile() {
@@ -107,7 +107,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
                 ", username='" + username + '\'' +
-                ", birthDay='" + birthDay + '\'' +
+                ", birthDate='" + birthDate + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", interest=" + interest +
                 '}';
