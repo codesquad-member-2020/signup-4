@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
-                                <rect key="frame" x="36.5" y="128" width="341" height="356"/>
+                                <rect key="frame" x="36.5" y="128" width="341" height="430"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-YM-DX1" userLabel="idStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="59"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-Dg-Tg2">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -41,10 +41,16 @@
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1po-Ql-J9l"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crm-63-5YA" userLabel="idValidationLabel">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="35z-hW-8eK" userLabel="passwordStackView">
-                                        <rect key="frame" x="0.0" y="99" width="341" height="59"/>
+                                        <rect key="frame" x="0.0" y="117.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq2-Ph-53F">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -65,10 +71,16 @@
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUm-ve-N5G"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-N4-PGb" userLabel="pwValidationLabel">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-9V-oe4" userLabel="rePasswordStackView">
-                                        <rect key="frame" x="0.0" y="198" width="341" height="59"/>
+                                        <rect key="frame" x="0.0" y="235" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t42-3X-QXS">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -89,10 +101,16 @@
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YwS-sO-3Bx"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiE-IY-rvF" userLabel="rePwValidationLabel">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXx-v6-VsD" userLabel="nameStackView">
-                                        <rect key="frame" x="0.0" y="297" width="341" height="59"/>
+                                        <rect key="frame" x="0.0" y="352.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPv-Dh-td9">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -113,6 +131,12 @@
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="QYC-lY-eAF"/>
                                                 </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-A2-xVF" userLabel="nameValidationLabel">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
