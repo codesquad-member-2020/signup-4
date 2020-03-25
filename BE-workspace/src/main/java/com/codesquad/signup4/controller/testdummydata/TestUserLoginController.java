@@ -1,13 +1,9 @@
 package com.codesquad.signup4.controller.testdummydata;
 
-import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.failResultProvider;
-import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.okResultProvider;
-
 import com.codesquad.signup4.domain.Interest;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpSession;
