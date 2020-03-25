@@ -46,6 +46,7 @@ class SignUpViewController: UIViewController {
             validateRePassword()
             return
         case nameTextField:
+            validateName()
             return
         default:
             return
@@ -93,6 +94,15 @@ class SignUpViewController: UIViewController {
             
             rePwValidationLabel.text = "비밀번호가 일치하지 않습니다."
             rePasswordTextField.appearance = .invalid
+        }
+    }
+    
+    private func validateName() {
+        guard let name = nameTextField.text, name.count > 0 else {
+            nameTextField.appearance = .invalid
+            nameValidationLabel.status = .wrong
+            nameValidationLabel.text = "이름은 필수 입력 항목입니다."
+            return
         }
     }
 }
