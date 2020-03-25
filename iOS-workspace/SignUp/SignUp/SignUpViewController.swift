@@ -25,11 +25,15 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func editBegin(_ sender: InfoTextField) {
-        sender.appearance = .focused
+        if sender.appearance != .invalid {
+            sender.appearance = .focused
+        }
     }
     
     @IBAction func editEnd(_ sender: InfoTextField) {
-        sender.appearance = .normal
+        if sender.appearance != .invalid {
+            sender.appearance = .normal
+        }
     }
     
     @IBAction func editingChanged(_ sender: InfoTextField) {
@@ -39,6 +43,7 @@ class SignUpViewController: UIViewController {
         case passwordTextField:
             vaildatePassword()
         case rePasswordTextField:
+            validateRePassword()
             return
         case nameTextField:
             return
@@ -47,38 +52,48 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    
     private func vaildatePassword() {
+        passwordTextField.appearance = .invalid
+        pwValidationLabel.status = .wrong
         guard let password = passwordTextField.text, password.count <= 16 && password.count >= 8 else {
-            passwordTextField.appearance = .invalid
-            pwValidationLabel.status = .wrong
             pwValidationLabel.text = "8자 이상 16자 이하로 입력해주세요."
             return
         }
         
         if password.validateEngPassword() == false {
-            passwordTextField.appearance = .invalid
-            pwValidationLabel.status = .wrong
             pwValidationLabel.text = "영문 대문자를 최소 1자 이상 포함해주세요."
             return
         }
         
         if password.validateNumberPassword() == false {
-            passwordTextField.appearance = .invalid
-            pwValidationLabel.status = .wrong
             pwValidationLabel.text = "숫자를 최소 1자 이상 포함해주세요."
             return
         }
         
         if password.validateSymbolPassword() == false {
-            passwordTextField.appearance = .invalid
-            pwValidationLabel.status = .wrong
             pwValidationLabel.text = "특수문자를 최소 1자 이상 포함해주세요."
             return
         }
         
         pwValidationLabel.status = .correct
         pwValidationLabel.text = "안전한 비밀번호입니다."
+        passwordTextField.appearance = .normal
+    }
+    
+    private func validateRePassword() {
+        guard let rePassword = rePasswordTextField.text else {
+            return
+        }
+        
+        if passwordTextField.text == rePassword {
+            rePwValidationLabel.status = .correct
+            rePwValidationLabel.text = "비밀번호가 일치합니다."
+            rePasswordTextField.appearance = .normal
+        } else {
+            
+            rePwValidationLabel.text = "비밀번호가 일치하지 않습니다."
+            rePasswordTextField.appearance = .invalid
+        }
     }
 }
 

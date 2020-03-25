@@ -10,22 +10,20 @@ import Foundation
 
 extension String {
     func validateEngPassword() -> Bool {
-        let engValidateRegex = "[A-Z]"
-        let predict = NSPredicate(format: "SELF MATCHES %@", engValidateRegex)
-        return predict.evaluate(with: self)
+        let regularExpression = try! NSRegularExpression(pattern: "[A-Z]", options: .anchorsMatchLines)
+        let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
+        return !result.isEmpty
     }
     
     func validateNumberPassword() -> Bool {
-        let numValidateRegex = "/^(?=.*[0-9])/"
-        let predict = NSPredicate(format: "SELF MATCHES %@", numValidateRegex)
-        
-        return predict.evaluate(with: self)
+        let regularExpression = try! NSRegularExpression(pattern: "[0-9]", options: .anchorsMatchLines)
+        let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
+        return !result.isEmpty
     }
     
     func validateSymbolPassword() -> Bool {
-        let symbolValidateRegex = "/^(?=.*[!@#$%^*+=-])/"
-        let predict = NSPredicate(format: "SELF MATCHES %@", symbolValidateRegex)
-        
-        return predict.evaluate(with: self)
+        let regularExpression = try! NSRegularExpression(pattern: "[!@#$%]", options: .anchorsMatchLines)
+        let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
+        return !result.isEmpty
     }
 }
