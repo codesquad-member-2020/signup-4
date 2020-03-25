@@ -3,10 +3,10 @@ drop table if exists interest;
 
 create table user (
     id bigint auto_increment primary key,
-    user_id varchar(64),
+    user_iD varchar(64),
     password varchar(64),
     email varchar(64),
-    username varchar,
+    user_name varchar,
     gender varchar,
     mobile varchar,
     birth_date varchar
