@@ -33,14 +33,13 @@ public class TestUserLoginController {
   }
 
   @PostMapping("/login")
-  public String login(String userId, String password, HttpSession httpSession)
-      throws JsonProcessingException {
+  public Result login(String userId, String password, HttpSession httpSession) {
     insertTestUser();
     User user = (User) userRepository.findAll();
     if (userId.equals("testUserId") && password.equals("password")) {
       httpSession.setAttribute("sessionUser", user);
-      return failResultProvider("로그인에 성공하였습니다.");
+      return Result.fail("로그인에 성공하였습니다.");
     }
-    return okResultProvider();
+    return Result.ok();
   }
 }

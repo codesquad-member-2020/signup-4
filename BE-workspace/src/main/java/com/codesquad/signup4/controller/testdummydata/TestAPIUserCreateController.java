@@ -1,8 +1,5 @@
 package com.codesquad.signup4.controller.testdummydata;
 
-import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.failResultProvider;
-import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.okResultProvider;
-
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
@@ -24,46 +21,46 @@ public class TestAPIUserCreateController {
   UserRepository userRepository;
 
   @PostMapping("/create")
-  public String create(User newUser) throws JsonProcessingException {
+  public Result create(User newUser) {
 //        Todo 일단 이렇게 작성만 해놓음
     if (newUser.getUserId() == null) {
       throw new BadRequestException();
     }
-    return okResultProvider();
+    return Result.ok();
   }
 
   @GetMapping("/duplicate/checkId")
-  public String checkId(@RequestParam String id) throws JsonProcessingException {
+  public Result checkId(@RequestParam String id) {
     if (id == null) {
       throw new BadRequestException();
     }
 
     if (id.equals("testUserId")) {
-      return failResultProvider("중복된 아이디입니다.");
+      return Result.fail("중복된 아이디입니다.");
     }
-    return okResultProvider();
+    return Result.ok();
   }
 
   @GetMapping("/duplicate/checkEmail")
-  public String checkEmail(@RequestParam String email) throws JsonProcessingException {
+  public Result checkEmail(@RequestParam String email) {
     if (email == null) {
       throw new BadRequestException();
     }
     if (email.equals("javajigi@gmail.com")) {
-      return failResultProvider("중복된 이메일입니다.");
+      return Result.fail("중복된 이메일입니다.");
     }
-    return okResultProvider();
+    return Result.ok();
   }
 
   @GetMapping("/duplicate/checkMobile")
-  public String checkMobile(@RequestParam String mobileNumber) throws JsonProcessingException {
+  public Result checkMobile(@RequestParam String mobileNumber) {
     if (mobileNumber == null) {
       throw new BadRequestException();
     }
 
     if (mobileNumber.equals("01012341234")) {
-        return failResultProvider("중복된 번호입니다.");
+        return Result.fail("중복된 번호입니다.");
     }
-    return okResultProvider();
+    return Result.ok();
   }
 }
