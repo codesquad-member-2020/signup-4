@@ -32,7 +32,7 @@ public class UserLoginController {
   public Result login(String userId, String password, HttpSession httpSession) {
     insertTestUser();
     User user = (User) userRepository.findAll();
-    if (userId.equals("testUserId") && password.equals("password")) {
+    if (userId.equals("javajigi") && password.equals("password")) {
       httpSession.setAttribute("sessionUser", user);
       return Result.ok();
     }
