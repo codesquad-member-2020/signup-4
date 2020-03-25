@@ -35,13 +35,14 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkID")
     public Result checkId(@RequestParam String id) {
-        if (id == null) {
+        if (id == null || id.equals("")) {
             throw new BadRequestException();
         }
 
-        if (id.equals("testUserId")) {
+        if (userRepository.findByUserID(id) != null) {
             return Result.fail("중복된 아이디입니다.");
         }
+
         return Result.ok();
     }
 
@@ -58,11 +59,12 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkMobile")
     public Result checkMobile(@RequestParam String mobileNumber) {
-        if (mobileNumber == null) {
+
+        if (mobileNumber == null || mobileNumber.equals("")) {
             throw new BadRequestException();
         }
 
-        if (mobileNumber.equals("01012341234")) {
+        if (userRepository.findByMobile(mobileNumber) != null) {
             return Result.fail("중복된 번호입니다.");
         }
         return Result.ok();
