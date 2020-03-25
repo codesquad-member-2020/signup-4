@@ -1,73 +1,103 @@
-import {
-  REG_PATTERN,
-  INFO_MESSAGE,
-  FIELD_VALUE,
-  mockData
-} from "../util/constant.js";
-import { $select, $selectAll, $getByID, $addListener } from "../util/func.js";
-import {
-  printMessage,
-  addClassMessage,
-  removeClassMessage
-} from "./infoMessage.js";
+import { REG_PATTERN, INFO_MESSAGE, MIN_AGE, MAX_AGE, mockData } from '../util/constant.js';
+import { $select, $addListener } from '../util/func.js';
+import { printMessage } from './infoMessage.js';
+import { birthRender, dayRender } from './birthRender.js';
+// import { addInterests } from './interest.js'
 
-const regEl = $select(".register");
+const stateBirth = {
+  selectYear: null,
+  selectMonth: null
+};
+const elementRegister = $select('.register');
+const [elementYY, elementMM, elementDD] = [$select('#birthYY'), $select('#birthMM'), $select('#birthDD')];
 
-// 상수를 사용하여도 순수함수가 될 수 있다. 상수는 변화가 없기 때문에..
-const check = (reg, el, successMsg, errorMsg) => {
-  if (reg.test(el.value)) {
-    removeClassMessage(el, "error");
-    return printMessage(successMsg, el);
-  }
-  addClassMessage(el, "error");
-  printMessage(errorMsg, el);
-  el.value = "";
-  el.focus();
+const checkID = (id, target) => {
+  const ERROR = 'error';
+  const REG = REG_PATTERN.userID;
+  const MESSAGE = INFO_MESSAGE.userID;
+  if (!REG.test(id)) return printMessage(MESSAGE.errorMsg, target, ERROR);
+  return printMessage(MESSAGE.successMsg, target);
 };
 
+const checkPW = (password, target) => {
+  const ERROR = 'error';
+  const REG = REG_PATTERN.password;
+  const MESSAGE = INFO_MESSAGE.password;
+  const MESSAGE_ERROR = MESSAGE.errorMsg;
+  if (!REG.limit.test(password)) return printMessage(MESSAGE_ERROR.limit, target, ERROR);
+  if (!REG.case.test(password)) return printMessage(MESSAGE_ERROR.case, target, ERROR);
+  if (!REG.number.test(password)) return printMessage(MESSAGE_ERROR.number, target, ERROR);
+  if (!REG.symbol.test(password)) return printMessage(MESSAGE_ERROR.symbol, target, ERROR);
+  return printMessage(MESSAGE.successMsg, target);
+};
+
+const checkReconfirm = (checkValue, originalValue, target) => {
+  const ERROR = 'error';
+  const MESSAGE = INFO_MESSAGE.password_confirm;
+  if (originalValue !== checkValue) return printMessage(MESSAGE.errorMsg, target, ERROR);
+  return printMessage(MESSAGE.successMsg, target);
+};
+
+const checkEmail = (email, target) => {
+  const ERROR = 'error';
+  const REG = REG_PATTERN.email;
+  const MESSAGE = INFO_MESSAGE.email;
+  const MESSAGE_ERROR = MESSAGE.errorMsg;
+  if (!REG.test(email)) return printMessage(MESSAGE_ERROR, target, ERROR);
+  return printMessage(MESSAGE.successMsg, target);
+};
+
+const checkBirth = () => {};
+
+const checkMobile = (mobile, target) => {
+  const ERROR = 'error';
+  const REG = REG_PATTERN.mobile;
+  const MESSAGE = INFO_MESSAGE.mobile;
+  const MESSAGE_ERROR = MESSAGE.errorMsg;
+  if (!REG.test(mobile)) return printMessage(MESSAGE_ERROR, target, ERROR);
+  return printMessage(MESSAGE.successMsg, target);
+};
+
+const checkInterest = () => {};
+
 const changeCallback = event => {
+  const target = event.target;
   switch (event.target.id) {
-    case "userID":
-      if (!check(REG_PATTERN.userID,event.target,INFO_MESSAGE.userID.successMsg,INFO_MESSAGE.userID.errorMsg)) return false;
+    case 'userID':
+      checkID(target.value, target);
       break;
-    case "password":
-      if (!check(REG_PATTERN.password,event.target,INFO_MESSAGE.password.successMsg,INFO_MESSAGE.password.errorMsg.limit)) return false;
+    case 'password':
+      checkPW(target.value, target);
       break;
-    case "password_confirm":
-      if (!check(REG_PATTERN.password,event.target,INFO_MESSAGE.password.successMsg,INFO_MESSAGE.password.errorMsg.limit)) return false;
+    case 'password_confirm':
+      checkReconfirm(target.value, $select('#password').value, target);
       break;
-    case "birthYY":
-      console.log('YY')
+    case 'birthYY':
+      stateBirth.selectYear = target.options[target.selectedIndex].value;
+      dayRender(stateBirth.selectYear, stateBirth.selectMonth, elementDD);
       break;
-    case "birthMM":
-      console.log('MM')
+    case 'birthMM':
+      stateBirth.selectMonth = target.options[target.selectedIndex].value;
+      dayRender(stateBirth.selectYear, stateBirth.selectMonth, elementDD);
       break;
-    case "birthDD":
-      console.log('DD')
+    case 'birthDD':
+      console.log(stateBirth);
       break;
-    case "email":
-      console.log('email')
+    case 'email':
+      checkEmail(target.value, target);
       break;
-    case "mobile":
-      console.log('mobile')
+    case 'mobile':
+      checkMobile(target.value, target);
       break;
-    case "interest":
-      console.log('관심사')
+    case 'interest':
+      // addInterests()
       break;
     default:
       break;
   }
-  // if (
-  //   !check(
-  //     REG_PATTERN.userID,
-  //     event.target,
-  //     INFO_MESSAGE.userID.successMsg,
-  //     INFO_MESSAGE.userID.errorMsg
-  //   )
-  // )
-  //   return false;
 };
 
-$addListener(document, "DOMContentLoaded", () => {
-  $addListener(regEl, "change", changeCallback);
+$addListener(document, 'DOMContentLoaded', () => {
+  birthRender(MIN_AGE, MAX_AGE, elementYY, elementMM, elementDD);
+  $addListener(elementRegister, 'change', changeCallback);
 });

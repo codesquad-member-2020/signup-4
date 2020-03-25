@@ -1,23 +1,16 @@
+export const MIN_AGE = 14;
+export const MAX_AGE = 99;
 export const REG_PATTERN = {
   userID: /^[a-z]{1}[a-z0-9-_]{4,19}$/,
-  password: /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$/,
+  password: {
+    limit: /.{8,16}$/,
+    case: /^(?=.*[A-Z])/,
+    number: /^(?=.*[0-9])/,
+    symbol: /^(?=.*[!@#$%^*+=-])/
+  },
   email: /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
   mobile: /^010\d{3,4}\d{4}$/g
 };
-
-export const FIELD_VALUE = [
-  "userID",
-  "password",
-  "password_confirm",
-  "userName",
-  "birthYY",
-  "birthMM",
-  "birthDD",
-  "sex",
-  "email",
-  "mobile",
-  "interest"
-];
 
 export const INFO_MESSAGE = {
   userID: {
@@ -51,15 +44,15 @@ export const INFO_MESSAGE = {
     successMsg: ''
   },
   email: {
-    errorMsg: '',
+    errorMsg: '이메일 주소를 다시 확인해주세요.',
     successMsg: ''
   },
   mobile: {
-    errorMsg: '',
+    errorMsg: '형식에 맞지 않는 번호입니다.',
     successMsg: ''
   },
   interest: {
-    errorMsg: '',
+    errorMsg: '3개 이상의 관심사를 입력하세요.',
     successMsg: ''
   },
   agree: {
@@ -70,41 +63,41 @@ export const INFO_MESSAGE = {
     errorMsg: '',
     successMsg: ''
   }
-}
+};
 
 export const mockData = {
   user: [
     {
-      userID: "baekco",
-      email: "baekco@google.com",
-      birthDate: "2020-01-01",
-      mobile: "010-5555-5555",
-      sex: "여자",
-      interest: ["웹툰", "쇼핑", "축구"]
+      userID: 'baekco',
+      email: 'baekco@google.com',
+      birthDate: '2020-01-01',
+      mobile: '010-5555-5555',
+      sex: '여자',
+      interest: ['웹툰', '쇼핑', '축구']
     },
     {
-      userID: "sigrid",
-      email: "sigrid@google.com",
-      birthDate: "2020-01-01",
-      mobile: "010-5555-5555",
-      sex: "여자",
-      interest: ["웹툰", "쇼핑", "축구"]
+      userID: 'sigrid',
+      email: 'sigrid@google.com',
+      birthDate: '2020-01-01',
+      mobile: '010-5555-5555',
+      sex: '여자',
+      interest: ['웹툰', '쇼핑', '축구']
     },
     {
-      userID: "ellie",
-      email: "ellie@google.com",
-      birthDate: "2020-01-01",
-      mobile: "010-5555-5555",
-      sex: "여자",
-      interest: ["웹툰", "쇼핑", "축구"]
+      userID: 'ellie',
+      email: 'ellie@google.com',
+      birthDate: '2020-01-01',
+      mobile: '010-5555-5555',
+      sex: '여자',
+      interest: ['웹툰', '쇼핑', '축구']
     },
     {
-      userID: "Lin",
-      email: "Lin@google.com",
-      birthDate: "2020-01-01",
-      mobile: "010-5555-5555",
-      sex: "여자",
-      interest: ["웹툰", "쇼핑", "축구"]
+      userID: 'Lin',
+      email: 'Lin@google.com',
+      birthDate: '2020-01-01',
+      mobile: '010-5555-5555',
+      sex: '여자',
+      interest: ['웹툰', '쇼핑', '축구']
     }
   ]
 };
