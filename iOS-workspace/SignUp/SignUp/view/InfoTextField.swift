@@ -48,7 +48,7 @@ class InfoTextField: UITextField {
         switch appearance {
         case .normal: self.layer.borderColor = UIColor(named: "normalGray")?.cgColor
         case .focused: self.layer.borderColor = UIColor(named: "focusBlue")?.cgColor
-        case .invalid: self.layer.borderColor = UIColor.systemRed.cgColor
+        case .invalid: self.layer.borderColor = UIColor(named: "errorRed")?.cgColor
         }
         self.layer.borderWidth = 1
     }

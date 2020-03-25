@@ -16,6 +16,8 @@
 		AB958D552429000200C75714 /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D542429000200C75714 /* SignUpTests.swift */; };
 		AB958D602429000200C75714 /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D5F2429000200C75714 /* SignUpUITests.swift */; };
 		AB958D732429ED7500C75714 /* InfoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D722429ED7500C75714 /* InfoTextField.swift */; };
+		AB958D75242B333400C75714 /* ValidationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D74242B333400C75714 /* ValidationLabel.swift */; };
+		AB958D79242B48E500C75714 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D78242B48E500C75714 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		AB958D5F2429000200C75714 /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
 		AB958D612429000200C75714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB958D722429ED7500C75714 /* InfoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextField.swift; sourceTree = "<group>"; };
+		AB958D74242B333400C75714 /* ValidationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationLabel.swift; sourceTree = "<group>"; };
+		AB958D78242B48E500C75714 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		AB958D3C2428FFFE00C75714 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				AB958D77242B48CE00C75714 /* util */,
 				AB958D6F2429CF6C00C75714 /* view */,
 				AB958D3D2428FFFE00C75714 /* AppDelegate.swift */,
 				AB958D3F2428FFFE00C75714 /* SceneDelegate.swift */,
@@ -135,8 +140,17 @@
 			isa = PBXGroup;
 			children = (
 				AB958D722429ED7500C75714 /* InfoTextField.swift */,
+				AB958D74242B333400C75714 /* ValidationLabel.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		AB958D77242B48CE00C75714 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				AB958D78242B48E500C75714 /* StringExtension.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +286,9 @@
 			files = (
 				AB958D422428FFFE00C75714 /* SignUpViewController.swift in Sources */,
 				AB958D3E2428FFFE00C75714 /* AppDelegate.swift in Sources */,
+				AB958D79242B48E500C75714 /* StringExtension.swift in Sources */,
 				AB958D732429ED7500C75714 /* InfoTextField.swift in Sources */,
+				AB958D75242B333400C75714 /* ValidationLabel.swift in Sources */,
 				AB958D402428FFFE00C75714 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

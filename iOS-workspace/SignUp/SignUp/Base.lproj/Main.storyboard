@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
-                                <rect key="frame" x="36.5" y="128" width="341" height="430"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="128" width="341" height="358"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-YM-DX1" userLabel="idStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
@@ -39,18 +39,19 @@
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="6Qq-xi-zvf"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1po-Ql-J9l"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="btA-db-pXW"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crm-63-5YA" userLabel="idValidationLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crm-63-5YA" userLabel="idValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="35z-hW-8eK" userLabel="passwordStackView">
-                                        <rect key="frame" x="0.0" y="117.5" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="93.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq2-Ph-53F">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -69,18 +70,19 @@
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vGb-7N-d5s"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUm-ve-N5G"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="asz-TQ-aLt"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-N4-PGb" userLabel="pwValidationLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-N4-PGb" userLabel="pwValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-9V-oe4" userLabel="rePasswordStackView">
-                                        <rect key="frame" x="0.0" y="235" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="187" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t42-3X-QXS">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -99,18 +101,19 @@
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="TJW-kR-waa"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YwS-sO-3Bx"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="N8K-XC-KRz"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiE-IY-rvF" userLabel="rePwValidationLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiE-IY-rvF" userLabel="rePwValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXx-v6-VsD" userLabel="nameStackView">
-                                        <rect key="frame" x="0.0" y="352.5" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="280.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPv-Dh-td9">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -129,12 +132,13 @@
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="p6t-v5-RVa"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="QYC-lY-eAF"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="8e7-9m-mLx"/>
                                                 </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-A2-xVF" userLabel="nameValidationLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-A2-xVF" userLabel="nameValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -144,7 +148,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBA-aG-wsc">
                                 <rect key="frame" x="144" y="67" width="126" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" name="mainTitleColor"/>
+                                <color key="textColor" name="textGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -159,6 +163,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="idTextField" destination="cQh-TC-QEY" id="wpV-9y-se9"/>
+                        <outlet property="idValidationLabel" destination="crm-63-5YA" id="uQF-QJ-Sa3"/>
+                        <outlet property="nameTextField" destination="E9G-mz-QTt" id="3fx-hh-UDc"/>
+                        <outlet property="nameValidationLabel" destination="6yi-A2-xVF" id="KW5-Lg-rYD"/>
+                        <outlet property="passwordTextField" destination="jdC-x9-KD9" id="db9-T2-ybK"/>
+                        <outlet property="pwValidationLabel" destination="QPE-N4-PGb" id="VX2-Yt-vdl"/>
+                        <outlet property="rePasswordTextField" destination="l1u-eF-cgV" id="xR6-fd-RY4"/>
+                        <outlet property="rePwValidationLabel" destination="CiE-IY-rvF" id="etg-Po-FxG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +180,7 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="mainTitleColor">
+        <namedColor name="textGreen">
             <color red="0.019607843137254902" green="0.65098039215686276" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
