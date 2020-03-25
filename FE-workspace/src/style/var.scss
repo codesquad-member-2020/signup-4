@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
 /* Layout */
 $inner-width: 1000px;
@@ -12,8 +12,7 @@ $color-error: #e65f3e;
 $color-gray: #f2f4f7;
 
 /* Font-family */
-$font-family-default: "Noto Sans KR", "AppleSDGothicNeo-Regular", "맑은 고딕",
-  "Malgun Gothic", "돋움", "dotum" sans-serif;
+$font-family-default: 'Noto Sans KR', sans-serif;
 
 /* Font-size */
 $font-size-default: 14px;
