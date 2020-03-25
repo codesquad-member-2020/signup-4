@@ -9,12 +9,17 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
-
+    
+    @IBAction func editBegin(_ sender: InfoTextField) {
+        sender.appearance = .focused
+    }
+    
+    @IBAction func editEnd(_ sender: InfoTextField) {
+        sender.appearance = .normal
+    }
 }
 

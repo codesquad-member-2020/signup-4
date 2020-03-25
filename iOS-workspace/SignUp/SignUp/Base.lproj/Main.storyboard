@@ -27,7 +27,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-TC-QEY" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-TC-QEY" userLabel="idTextField" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="23.5" width="354" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -35,6 +35,10 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="6Qq-xi-zvf"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1po-Ql-J9l"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -55,6 +59,10 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vGb-7N-d5s"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUm-ve-N5G"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -73,8 +81,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="LCF-Ch-ioT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="TJW-kR-waa"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YwS-sO-3Bx"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -93,8 +105,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="o7A-ka-KMr"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="p6t-v5-RVa"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="QYC-lY-eAF"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
