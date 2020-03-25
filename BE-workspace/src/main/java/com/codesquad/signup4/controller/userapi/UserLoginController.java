@@ -34,8 +34,8 @@ public class UserLoginController {
     User user = (User) userRepository.findAll();
     if (userId.equals("testUserId") && password.equals("password")) {
       httpSession.setAttribute("sessionUser", user);
-      return Result.fail("로그인에 성공하였습니다.");
+      return Result.ok();
     }
-    return Result.ok();
+    return Result.fail("로그인에 실패하였습니다.");
   }
 }
