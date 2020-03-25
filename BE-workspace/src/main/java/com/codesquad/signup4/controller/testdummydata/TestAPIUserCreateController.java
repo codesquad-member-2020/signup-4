@@ -6,12 +6,16 @@ import com.codesquad.signup4.dto.Result;
 import com.codesquad.signup4.exception.BadRequestException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
-public class APIUserController {
+public class TestAPIUserController {
+
+  private static final Logger log = LoggerFactory.getLogger(TestAPIUserController.class);
 
   @Autowired
   UserRepository userRepository;
@@ -27,7 +31,7 @@ public class APIUserController {
     return okResultProvider();
   }
 
-  @GetMapping("/checkId")
+  @GetMapping("/duplicate/checkId")
   public String checkId(@RequestParam String id) throws JsonProcessingException {
     if (id == null) {
       throw new BadRequestException();
@@ -39,7 +43,18 @@ public class APIUserController {
     return okResultProvider();
   }
 
-  @GetMapping("/checkMobile")
+  @GetMapping("/duplicate/checkEmail")
+  public String checkEmail(@RequestParam String email) throws JsonProcessingException {
+    if (email == null) {
+      throw new BadRequestException();
+    }
+    if (email.equals("javajigi@gmail.com")) {
+      return failResultProvider("중복된 이메일입니다.");
+    }
+    return okResultProvider();
+  }
+
+  @GetMapping("/duplicate/checkMobile")
   public String checkMobile(@RequestParam String mobileNumber) throws JsonProcessingException {
     if (mobileNumber == null) {
       throw new BadRequestException();
