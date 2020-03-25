@@ -1,4 +1,4 @@
-package com.codesquad.signup4.controller.testdummydata;
+package com.codesquad.signup4.controller.userapi;
 
 import com.codesquad.signup4.domain.Interest;
 import com.codesquad.signup4.domain.User;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/test/auth")
-public class TestUserLoginController {
+@RequestMapping("/api/auth")
+public class UserLoginController {
 
   @Autowired
   private UserRepository userRepository;

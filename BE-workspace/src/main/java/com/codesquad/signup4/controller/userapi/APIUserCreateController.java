@@ -1,4 +1,4 @@
-package com.codesquad.signup4.controller.testdummydata;
+package com.codesquad.signup4.controller.userapi;
 
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/test/users")
-public class TestAPIUserCreateController {
+@RequestMapping("/api/users")
+public class APIUserCreateController {
 
-  private static final Logger log = LoggerFactory.getLogger(TestAPIUserCreateController.class);
+  private static final Logger log = LoggerFactory.getLogger(APIUserCreateController.class);
 
   @Autowired
   UserRepository userRepository;
