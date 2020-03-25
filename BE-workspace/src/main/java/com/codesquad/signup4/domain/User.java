@@ -1,12 +1,22 @@
 package com.codesquad.signup4.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import java.util.List;
 import java.util.Objects;
 
-public class User {
+@JsonInclude(Include.NON_NULL)
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    public User() {
+        super();
+    }
 
     @Id
     private Long id;
@@ -29,6 +39,7 @@ public class User {
     private List<Interest> interest;
 
     public User(String userId, String password, String email, String gender, String username, String birthDate, String mobile) {
+        super();
         this.userId = userId;
         this.password = password;
         this.email = email;
