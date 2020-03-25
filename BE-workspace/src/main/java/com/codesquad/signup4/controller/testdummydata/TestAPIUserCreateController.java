@@ -1,4 +1,7 @@
-package com.codesquad.signup4.controller;
+package com.codesquad.signup4.controller.testdummydata;
+
+import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.failResultProvider;
+import static com.codesquad.signup4.controller.testdummydata.TestDummyDataUtils.okResultProvider;
 
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
@@ -12,15 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/users")
-public class TestAPIUserController {
+@RequestMapping("/api/test/users")
+public class TestAPIUserCreateController {
 
-  private static final Logger log = LoggerFactory.getLogger(TestAPIUserController.class);
+  private static final Logger log = LoggerFactory.getLogger(TestAPIUserCreateController.class);
 
   @Autowired
   UserRepository userRepository;
-
-  ObjectMapper objectMapper = new ObjectMapper();
 
   @PostMapping("/create")
   public String create(User newUser) throws JsonProcessingException {
@@ -64,15 +65,5 @@ public class TestAPIUserController {
         return failResultProvider("중복된 번호입니다.");
     }
     return okResultProvider();
-  }
-
-  public String okResultProvider() throws JsonProcessingException {
-    Result okResult = Result.ok();
-    return objectMapper.writeValueAsString(okResult);
-  }
-
-  public String failResultProvider(String errorMessage) throws JsonProcessingException {
-      Result failResult = Result.fail(errorMessage);
-      return objectMapper.writeValueAsString(failResult);
   }
 }
