@@ -21,13 +21,13 @@ public class APIUserCreateController {
   @PostMapping("/create")
   public Result create(User newUser) {
 //        Todo 일단 이렇게 작성만 해놓음
-    if (newUser.getUserId() == null) {
+    if (newUser.getUserID() == null) {
       throw new BadRequestException();
     }
     return Result.ok();
   }
 
-  @GetMapping("/duplicate/checkId")
+  @GetMapping("/duplicate/checkID")
   public Result checkId(@RequestParam String id) {
     if (id == null) {
       throw new BadRequestException();

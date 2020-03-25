@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Id
     private Long id;
 
-    private String userId;
+    private String userID;
 
     private String password;
 
@@ -29,7 +29,7 @@ public class User implements Serializable {
 
     private String gender;
 
-    private String username;
+    private String userName;
 
     private String birthDate;
 
@@ -38,19 +38,19 @@ public class User implements Serializable {
     @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
     private List<Interest> interest;
 
-    public User(String userId, String password, String email, String gender, String username, String birthDate, String mobile) {
+    public User(String userID, String password, String email, String gender, String userName, String birthDate, String mobile) {
         super();
-        this.userId = userId;
+        this.userID = userID;
         this.password = password;
         this.email = email;
         this.gender = gender;
-        this.username = username;
+        this.userName = userName;
         this.birthDate = birthDate;
         this.mobile = mobile;
     }
 
-    public static User create(String userId, String password, String email, String gender, String username, String birthDate, String mobile) {
-        return new User(userId, password, email, gender, username, birthDate, mobile);
+    public static User create(String userID, String password, String email, String gender, String userName, String birthDate, String mobile) {
+        return new User(userID, password, email, gender, userName, birthDate, mobile);
     }
 
     public void addInterest(List<Interest> interest) {
@@ -61,8 +61,8 @@ public class User implements Serializable {
         return gender;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getBirthDate() {
@@ -85,12 +85,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getPassword() {
@@ -113,11 +113,11 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userId='" + userId + '\'' +
+                ", userID='" + userID + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
-                ", username='" + username + '\'' +
+                ", userName='" + userName + '\'' +
                 ", birthDate='" + birthDate + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", interest=" + interest +

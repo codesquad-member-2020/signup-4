@@ -35,7 +35,7 @@ public class APIControllerTest {
     String posturl = "http://localhost:" + port + "create";
     String inputJSON = "{\"userId\":\"javajigi\",\"password\":\"password\",\"email\":\"javajigi@gmail.com\",\"gender\":\"여자\",\"username\":\"testUserName\",\"birthDate\":\"2020-01-01\",\"mobile\":\"01012341234\",\"interest\":[{\"id\":1,\"interestName\":\"soccer\"},{\"id\":2,\"interestName\":\"shopping\"}]}\n";
     //여기서 실제로는 어떻게 interest를 받아서 처리할 지 고민해야 할 것 같습니다.
-    User expectedJavajigi = User.create("javajigi", "password", "javajigi@gmail.com", "여자", "testUserName", "2020-01-01", "01012341234");
+    User expectedJavajigi = User.create("javajigi", "password", "javajigi@gmail.com", "female", "testUserName", "2020-01-01", "01012341234");
     User javajigi = objectMapper.readValue(inputJSON, User.class);
     ResponseEntity<Object> createResponseEntity = testRestTemplate.postForEntity(posturl, javajigi, Object.class);
 
