@@ -1,15 +1,21 @@
-package com.codesquad.signup4.controller.userapi;
+package com.codesquad.signup4.controller.auth;
 
-import com.codesquad.signup4.domain.Interest;
+import com.codesquad.signup4.controller.utils.HttpSessionUtil;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
-import java.util.ArrayList;
-import java.util.List;
+import com.codesquad.signup4.exception.BadRequestException;
+import com.codesquad.signup4.exception.UnauthorizedException;
+import com.codesquad.signup4.exception.UserNotFoundException;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,23 +25,24 @@ public class UserLoginController {
   @Autowired
   private UserRepository userRepository;
 
-  private void insertTestUser() {
-    User javajigi = User.create("javajigi", "password", "javajigi@gmail.com", "여자", "testUserName", "2020-01-01", "01012341234");
-    List<Interest> interest = new ArrayList<>();
-    interest.add(new Interest("soccer"));
-    interest.add(new Interest("shopping"));
-    javajigi.addInterest(interest);
-    userRepository.save(javajigi);
-  }
-
   @PostMapping("/login")
-  public Result login(String userId, String password, HttpSession httpSession) {
-    insertTestUser();
-    User user = (User) userRepository.findAll();
-    if (userId.equals("javajigi") && password.equals("password")) {
-      httpSession.setAttribute("sessionUser", user);
-      return Result.ok();
+  public ResponseEntity<Result> login(@RequestBody Map<String, String> userData, HttpSession httpSession) {
+    String userID = userData.get("userID");
+    String password = userData.get("password");
+
+    // TODO: 인터셉터를 활용하여 유저 아이디와 비밀번호가 포맷에 맞는 지 검증하는 로직 추가 필요
+
+    User user = userRepository.findByUserID(userID); //TODO orElseThrow가 왜 안먹지?
+
+    if (user == null) {
+      throw new UserNotFoundException(); // orElseThrow 에러가 먹지 않아 별도의 null 체크 로직을 추가함
     }
-    return Result.fail("로그인에 실패하였습니다.");
+
+    if (!user.checkPassword(password)) {
+      throw new UnauthorizedException();
+    }
+
+    httpSession.setAttribute(HttpSessionUtil.USER_SESSION_KEY, user);
+    return new ResponseEntity<>(Result.ok(), HttpStatus.OK);
   }
 }
