@@ -4,6 +4,7 @@ import { STATE_USER_DATA } from './registerUserData.js';
 import { checkID, checkPW, checkPWReconfirm, checkEmail, checkMobile, checkInterest, checkSubmit, chcekReset } from './registerCheck.js';
 import { calcBirth, yearRender, monthRender, dayRender } from './registerBirthRender.js';
 import { renderInterest, removeTag } from './registerInterest.js';
+import { modal } from './modal.js';
 
 const elementRegister = $select('.register');
 const elementRegisterBtns = $select('.btn-wrap');
@@ -73,6 +74,7 @@ const keyupCallback = event => {
 $addListener(document, 'DOMContentLoaded', () => {
   yearRender(calcYear, elementYY);
   monthRender(calcMonth, elementMM);
+  modal();
   $addListener(elementRegister, 'change', changeCallback);
   $addListener(elementRegisterBtns, 'click', clickCallback);
   $addListener(elementRegister, 'keyup', keyupCallback);

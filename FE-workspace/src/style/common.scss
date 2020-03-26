@@ -88,3 +88,43 @@ body {
     width: 32%;
   }
 }
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  &.active {
+    display: flex;
+  }
+  .modal-wrap {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding: 15px;
+    background: #fff;
+    .modal-title {
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: $font-size-large;
+      letter-spacing: -0.02em;
+    }
+    .modal-contents {
+      overflow-y: auto;
+      padding: 5px;
+      margin-bottom: 15px;
+      height: 170px;
+      border: 1px solid #d5d2d2;
+    }
+    .modal-close {
+      position: absolute;
+      top:15px;
+      right:15px;
+      cursor: pointer;
+    }
+  }
+}

@@ -71,7 +71,7 @@
               <span class="info-msg"></span>
             </div>
             <div class="row">
-              <a href="#">약관에 동의합니다. <input type="checkbox" name="agree" id="agree" disabled="disabled"/></a>
+              <a id="modal-link" href="#">약관에 동의합니다. <input type="checkbox" name="agree" id="agree" disabled="disabled"/></a>
             </div>
             <div class="row">
               <div class="btn-wrap half">
@@ -83,9 +83,18 @@
         </div>
       </div>
       <div id="footer">
-        <div class="inner">
-          Signup project #team4 <strong>@codesquad</strong>
+        <div class="inner">Signup project #team4 <strong>@codesquad</strong></div>
+      </div>
+      <div id="modal">
+        <div class="modal-wrap">
+          <div class="modal-title">개인정보 수집 및 이용에 대한 안내</div>
+          <div class="modal-container">
+            <div class="modal-contents"></div>
+            <button class="btn-aree" disabled="true">동의</button>
+          </div>
+          <div class="modal-close material-icons">close</div>
         </div>
+      </div>
     </div>
   </body>
 </html>
