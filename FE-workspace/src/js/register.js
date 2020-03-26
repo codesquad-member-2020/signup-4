@@ -7,7 +7,7 @@ import { addInterest, removeTag } from './registerInterest.js';
 
 const elementRegister = $select('.register');
 const elementRegisterBtns = $select('.btn-wrap');
-const elementInterestBox = $select('.interest-box');
+const elementInterestWrap = $select('.interest-wrap');
 const [elementYY, elementMM, elementDD] = [$select('#birthYY'), $select('#birthMM'), $select('#birthDD')];
 const [calcYear, calcMonth] = calcBirth(MIN_AGE, MAX_AGE);
 
@@ -64,11 +64,11 @@ const clickCallback = event => {
   }
 };
 const interestCallback = event => {
-  if (event.target.id === 'tag-close') return removeTag(event, $select('.interest-box'));
+  if (event.target.id === 'tag-close') return removeTag(event, elementInterestWrap);
 };
 
 const keydownCallback = event => {
-  addInterest(event, $select('.interest-box'));
+  addInterest(event, elementInterestWrap);
 };
 
 $addListener(document, 'DOMContentLoaded', () => {
@@ -77,5 +77,5 @@ $addListener(document, 'DOMContentLoaded', () => {
   $addListener(elementRegister, 'change', changeCallback);
   $addListener(elementRegisterBtns, 'click', clickCallback);
   $addListener(elementRegister, 'keyup', keydownCallback);
-  $addListener(elementInterestBox, 'click', interestCallback);
+  $addListener(elementInterestWrap, 'click', interestCallback);
 });

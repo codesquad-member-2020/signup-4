@@ -326,7 +326,7 @@ body {
   font-weight: bold;
 }
 
-.register .interest-box {
+.register .interest-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +340,7 @@ body {
   background: #fff;
 }
 
-.register .interest-box input {
+.register .interest-wrap input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -349,7 +349,7 @@ body {
   outline: 0;
 }
 
-.register .interest-box .tag {
+.register .interest-wrap .tag {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
