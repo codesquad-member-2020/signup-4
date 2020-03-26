@@ -26,6 +26,7 @@ public class APIUserCreateController {
 
     @PostMapping("/create")
     public Result create(User newUser) {
+
         if (!newUser.isValid()) {
             throw new BadRequestException();
         }
@@ -35,9 +36,7 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkID")
     public Result checkId(@RequestParam String id) {
-        if (id == null || id.equals("")) {
-            throw new BadRequestException();
-        }
+        checkNull(id);
 
         if (userRepository.findByUserID(id) != null) {
             return Result.fail("중복된 아이디입니다.");
@@ -48,10 +47,9 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkEmail")
     public Result checkEmail(@RequestParam String email) {
-        if (email == null) {
-            throw new BadRequestException();
-        }
-        if (email.equals("javajigi@gmail.com")) {
+        checkNull(email);
+
+        if (userRepository.findByEmail(email) != null) {
             return Result.fail("중복된 이메일입니다.");
         }
         return Result.ok();
@@ -59,14 +57,17 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkMobile")
     public Result checkMobile(@RequestParam String mobileNumber) {
-
-        if (mobileNumber == null || mobileNumber.equals("")) {
-            throw new BadRequestException();
-        }
+        checkNull(mobileNumber);
 
         if (userRepository.findByMobile(mobileNumber) != null) {
             return Result.fail("중복된 번호입니다.");
         }
         return Result.ok();
+    }
+
+    public void checkNull(String auditee) {
+        if (auditee == null || auditee.equals("")) {
+            throw new BadRequestException();
+        }
     }
 }
