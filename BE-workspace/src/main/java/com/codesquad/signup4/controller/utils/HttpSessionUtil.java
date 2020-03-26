@@ -14,7 +14,7 @@ public class HttpSessionUtil {
 
   public static User getUserFromSession(HttpSession httpSession) {
     if (!isLoggedIn(httpSession)) {
-      throw new BadRequestException();
+      throw new BadRequestException("로그인이 필요합니다.");
     }
     return (User) httpSession.getAttribute(USER_SESSION_KEY);
   }
