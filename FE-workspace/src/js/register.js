@@ -1,7 +1,7 @@
 import { REG_PATTERN, INFO_MESSAGE, MIN_AGE, MAX_AGE, mockData } from '../util/constant.js';
 import { $select, $addListener } from '../util/func.js';
 import { STATE_USER_DATA } from './registerUserData.js';
-import { checkID, checkPW, checkPWReconfirm, checkEmail, checkBirth, checkMobile, checkInterest, checkSubmit } from './registerCheck.js';
+import { checkID, checkPW, checkPWReconfirm, checkEmail, checkMobile, checkInterest, checkSubmit, chcekReset } from './registerCheck.js';
 import { calcBirth, yearRender, monthRender, dayRender } from './registerBirthRender.js';
 import { renderInterest, removeTag } from './registerInterest.js';
 
@@ -52,13 +52,12 @@ const changeCallback = event => {
 const clickCallback = event => {
   event.preventDefault();
   const target = event.target;
-  console.log(target.id);
   switch (target.id) {
-    case 'reset':
+    case 'form-reset':
       // 초기화 확인창 승인 => .reset() + STATE_USER_DATA도 초기화;
-      console.log('reset');
+      chcekReset();
       break;
-    case 'submit':
+    case 'form-submit':
       checkSubmit(STATE_USER_DATA);
       break;
   }

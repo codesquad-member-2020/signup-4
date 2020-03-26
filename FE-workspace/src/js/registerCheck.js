@@ -1,5 +1,5 @@
 import { REG_PATTERN, INFO_MESSAGE } from '../util/constant.js';
-import { $select } from '../util/func.js';
+import { $select, $selectAll } from '../util/func.js';
 import { STATE_USER_DATA } from './registerUserData.js'
 import { printMessage } from './infoMessage.js';
 
@@ -117,6 +117,17 @@ const alertMessage = (key) => {
   }
 }
 
+export const chcekReset = () => {
+  if (!confirm('초기화 하시겠습니까?')) return;
+  const registerForm = $select('#registerForm');
+  registerForm.reset();
+  resetData(STATE_USER_DATA);
+}
+const resetData = data => {
+  for (let key in data) {
+    data[key] = null;
+  }
+}
 const resultSubmit = (userData)=> {
   console.log('최종 결과 제출')
   //JSON 으로 담아서 페이지 전송
