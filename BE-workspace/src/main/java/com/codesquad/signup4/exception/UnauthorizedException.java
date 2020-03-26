@@ -1,5 +1,5 @@
 package com.codesquad.signup4.exception;
 
-public class UnauthorizedException {
+public class UnauthorizedException extends RuntimeException {
 
 }

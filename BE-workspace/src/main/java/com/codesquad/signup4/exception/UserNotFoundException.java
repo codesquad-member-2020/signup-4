@@ -1,5 +1,5 @@
 package com.codesquad.signup4.exception;
 
-public class UserNotFoundException {
+public class UserNotFoundException extends RuntimeException {
 
 }
