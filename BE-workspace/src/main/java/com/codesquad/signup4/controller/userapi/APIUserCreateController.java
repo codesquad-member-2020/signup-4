@@ -29,7 +29,7 @@ public class APIUserCreateController {
         if (!newUser.isValid()) {
             throw new BadRequestException();
         }
-
+        userRepository.save(newUser);
         return Result.ok();
     }
 
