@@ -3,7 +3,7 @@ import { $select, $addListener } from '../util/func.js';
 import { STATE_USER_DATA } from './registerUserData.js';
 import { checkID, checkPW, checkPWReconfirm, checkEmail, checkBirth, checkMobile, checkInterest, checkSubmit } from './registerCheck.js';
 import { calcBirth, yearRender, monthRender, dayRender } from './registerBirthRender.js';
-import { addInterest, removeTag } from './registerInterest.js';
+import { renderInterest, removeTag } from './registerInterest.js';
 
 const elementRegister = $select('.register');
 const elementRegisterBtns = $select('.btn-wrap');
@@ -67,8 +67,8 @@ const interestCallback = event => {
   if (event.target.id === 'tag-close') return removeTag(event, elementInterestWrap);
 };
 
-const keydownCallback = event => {
-  addInterest(event, elementInterestWrap);
+const keyupCallback = event => {
+  STATE_USER_DATA.interest = renderInterest(event, elementInterestWrap);
 };
 
 $addListener(document, 'DOMContentLoaded', () => {
@@ -76,6 +76,6 @@ $addListener(document, 'DOMContentLoaded', () => {
   monthRender(calcMonth, elementMM);
   $addListener(elementRegister, 'change', changeCallback);
   $addListener(elementRegisterBtns, 'click', clickCallback);
-  $addListener(elementRegister, 'keyup', keydownCallback);
+  $addListener(elementRegister, 'keyup', keyupCallback);
   $addListener(elementInterestWrap, 'click', interestCallback);
 });
