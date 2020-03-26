@@ -2,12 +2,12 @@ package com.codesquad.signup4.controller.userapi;
 
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
+import com.codesquad.signup4.dto.CreateUser;
 import com.codesquad.signup4.dto.Result;
 import com.codesquad.signup4.exception.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,18 +19,15 @@ public class APIUserCreateController {
     @Autowired
     UserRepository userRepository;
 
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.initDirectFieldAccess();
-    }
-
     @PostMapping("/create")
-    public Result create(User newUser) {
+    public Result create(CreateUser createUser) {
 
-        if (!newUser.isValid()) {
+        User user = new User(createUser);
+        if (!user.isValid()) {
             throw new BadRequestException();
         }
-        userRepository.save(newUser);
+
+        userRepository.save(user);
         return Result.ok();
     }
 

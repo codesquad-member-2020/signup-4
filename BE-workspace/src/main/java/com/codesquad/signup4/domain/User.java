@@ -1,5 +1,7 @@
 package com.codesquad.signup4.domain;
 
+import com.codesquad.signup4.dto.CreateUser;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import org.springframework.data.annotation.Id;
@@ -8,6 +10,7 @@ import org.springframework.data.relational.core.mapping.MappedCollection;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @JsonInclude(Include.NON_NULL)
 public class User implements Serializable {
@@ -35,6 +38,7 @@ public class User implements Serializable {
 
     private String mobile;
 
+    @JsonIgnore
     @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
     private List<Interest> interest;
 
@@ -47,6 +51,17 @@ public class User implements Serializable {
         this.userName = userName;
         this.birthDate = birthDate;
         this.mobile = mobile;
+    }
+
+    public User(CreateUser createUser) {
+        this.userID = createUser.getUserID();
+        this.password = createUser.getPassword();
+        this.email = createUser.getEmail();
+        this.gender = createUser.getGender();
+        this.userName = createUser.getUserName();
+        this.birthDate = createUser.getBirthDate();
+        this.mobile = createUser.getMobile();
+        this.interest = createUser.getInterest().stream().map(Interest::new).collect(Collectors.toList());
     }
 
     public static User create(String userID, String password, String email, String gender, String userName, String birthDate, String mobile) {
