@@ -3,10 +3,11 @@ import { $select, $addListener } from '../util/func.js';
 import { STATE_USER_DATA } from './registerUserData.js';
 import { checkID, checkPW, checkPWReconfirm, checkEmail, checkBirth, checkMobile, checkInterest, checkSubmit } from './registerCheck.js';
 import { calcBirth, yearRender, monthRender, dayRender } from './registerBirthRender.js';
-import { addInterests } from './interest.js'
+import { addInterest, removeTag } from './registerInterest.js';
 
 const elementRegister = $select('.register');
 const elementRegisterBtns = $select('.btn-wrap');
+const elementInterestBox = $select('.interest-box');
 const [elementYY, elementMM, elementDD] = [$select('#birthYY'), $select('#birthMM'), $select('#birthDD')];
 const [calcYear, calcMonth] = calcBirth(MIN_AGE, MAX_AGE);
 
@@ -45,18 +46,14 @@ const changeCallback = event => {
     case 'mobile':
       checkMobile(target.value, target);
       break;
-    case 'interest':
-      addInterests(target.value)
-      break;
-    default:
-      break;
   }
 };
 
 const clickCallback = event => {
   event.preventDefault();
   const target = event.target;
-  switch (event.target.id) {
+  console.log(target.id);
+  switch (target.id) {
     case 'reset':
       // 초기화 확인창 승인 => .reset() + STATE_USER_DATA도 초기화;
       console.log('reset');
@@ -66,10 +63,19 @@ const clickCallback = event => {
       break;
   }
 };
+const interestCallback = event => {
+  if (event.target.id === 'tag-close') return removeTag(event, $select('.interest-box'));
+};
+
+const keydownCallback = event => {
+  addInterest(event, $select('.interest-box'));
+};
 
 $addListener(document, 'DOMContentLoaded', () => {
   yearRender(calcYear, elementYY);
   monthRender(calcMonth, elementMM);
   $addListener(elementRegister, 'change', changeCallback);
   $addListener(elementRegisterBtns, 'click', clickCallback);
+  $addListener(elementRegister, 'keyup', keydownCallback);
+  $addListener(elementInterestBox, 'click', interestCallback);
 });
