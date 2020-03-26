@@ -48,10 +48,10 @@ public class APIUserCreateController {
 
     @GetMapping("/duplicate/checkEmail")
     public Result checkEmail(@RequestParam String email) {
-        if (email == null) {
+        if (email == null || email.equals("")) {
             throw new BadRequestException();
         }
-        if (email.equals("javajigi@gmail.com")) {
+        if (userRepository.findByEmail(email) != null) {
             return Result.fail("중복된 이메일입니다.");
         }
         return Result.ok();
