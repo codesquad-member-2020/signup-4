@@ -14,11 +14,13 @@ export const REG_PATTERN = {
 
 export const INFO_MESSAGE = {
   userID: {
+    submitMsg: '아이디를 입력해주세요.',
     errorMsg: '5~20자의 영문 소문자, 숫자, 특수기호(_)(-)만 사용가능합니다.',
     successMsg: '사용 가능한 아이디입니다.',
     overlapMsg: '이미 사용중인 아이디입니다.'
   },
   password: {
+    submitMsg: '패스워드를 입력해주세요.',
     errorMsg: {
       limit: '8자 이상 16자 이하로 입력해주세요.',
       case: '영문 대문자를 최소 1자 이상 포함해주세요.',
@@ -28,40 +30,44 @@ export const INFO_MESSAGE = {
     successMsg: '안전한 비밀번호 입니다.'
   },
   password_confirm: {
+    submitMsg: '패스워드를 재입력해주세요.',
     errorMsg: '패스워드가 다릅니다.',
     successMsg: '패스워드가 일치합니다.'
   },
   birthYY: {
-    errorMsg: '',
-    successMsg: ''
+    submitMsg: '년도를 입력해주세요.'
   },
   birthMM: {
-    errorMsg: '',
-    successMsg: ''
+    submitMsg: '월을 입력해주세요.'
   },
   birthDD: {
-    errorMsg: '',
-    successMsg: ''
+    submitMsg: '일을 입력해주세요'
+  },
+  gender: {
+    submitMsg: '성별을 입력해주세요.'
   },
   email: {
+    submitMsg: '이메일을 입력해주세요.',
     errorMsg: '이메일 주소를 다시 확인해주세요.',
     successMsg: ''
   },
   mobile: {
+    submitMsg: '휴대전화 번호를 입력해주세요.',
     errorMsg: '형식에 맞지 않는 번호입니다.',
     successMsg: ''
   },
   interest: {
-    errorMsg: '3개 이상의 관심사를 입력하세요.',
+    submitMsg: '관심사를 입력해주세요.',
+    errorMsg: '3개 이상의 관심사를 입력해주세요.',
     successMsg: ''
   },
   agree: {
+    submitMsg: '약관에 동의해주세요',
     errorMsg: '',
     successMsg: ''
   },
   common: {
-    errorMsg: '',
-    successMsg: ''
+    submitMsg: ''
   }
 };
 
