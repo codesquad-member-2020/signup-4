@@ -1,10 +1,10 @@
 package com.codesquad.signup4.controller.auth;
 
 import com.codesquad.signup4.controller.utils.HttpSessionUtil;
+import com.codesquad.signup4.controller.utils.LoginDataVerifyUtil;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
-import com.codesquad.signup4.exception.BadRequestException;
 import com.codesquad.signup4.exception.UnauthorizedException;
 import com.codesquad.signup4.exception.UserNotFoundException;
 import java.util.Map;
@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -30,16 +29,22 @@ public class UserLoginController {
     String userID = userData.get("userID");
     String password = userData.get("password");
 
-    // TODO: 인터셉터를 활용하여 유저 아이디와 비밀번호가 포맷에 맞는 지 검증하는 로직 추가 필요
-
     User user = userRepository.findByUserID(userID); //TODO orElseThrow가 왜 안먹지?
 
+    if (!LoginDataVerifyUtil.checkUserIDformat(userID)) {
+      throw new UnauthorizedException("아이디가 올바른 형태로 작성되지 아니하였습니다.");
+    }
+
+    if (!LoginDataVerifyUtil.checkUserPasswordformat(userID)) {
+      throw new UnauthorizedException("비밀번호가 올바른 형태로 작성되지 아니하였습니다.");
+    }
+
     if (user == null) {
-      throw new UserNotFoundException(); // orElseThrow 에러가 먹지 않아 별도의 null 체크 로직을 추가함
+      throw new UserNotFoundException("입력하신 아이디의 사용자가 존재하지 않습니다."); // orElseThrow 에러가 먹지 않아 별도의 null 체크 로직을 추가함
     }
 
     if (!user.checkPassword(password)) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException("입력하신 비밀번호가 일치하지 않습니다.");
     }
 
     httpSession.setAttribute(HttpSessionUtil.USER_SESSION_KEY, user);
