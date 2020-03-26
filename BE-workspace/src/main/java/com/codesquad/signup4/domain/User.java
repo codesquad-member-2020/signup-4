@@ -93,6 +93,10 @@ public class User implements Serializable {
         this.userID = userID;
     }
 
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
+    }
+
     public String getPassword() {
         return password;
     }
