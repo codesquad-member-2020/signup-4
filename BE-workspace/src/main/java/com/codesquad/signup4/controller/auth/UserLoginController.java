@@ -5,8 +5,10 @@ import com.codesquad.signup4.controller.utils.LoginDataVerifyUtil;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
+import com.codesquad.signup4.exception.PasswordFormatException;
 import com.codesquad.signup4.exception.UnauthorizedException;
 import com.codesquad.signup4.exception.UserNotFoundException;
+import com.codesquad.signup4.exception.userIDFormatException;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +34,11 @@ public class UserLoginController {
     User user = userRepository.findByUserID(userID); //TODO orElseThrow가 왜 안먹지?
 
     if (!LoginDataVerifyUtil.checkUserIDformat(userID)) {
-      throw new UnauthorizedException("아이디가 올바른 형태로 작성되지 아니하였습니다.");
+      throw new userIDFormatException("아이디가 올바른 형태로 작성되지 아니하였습니다.");
     }
 
-    if (!LoginDataVerifyUtil.checkUserPasswordformat(userID)) {
-      throw new UnauthorizedException("비밀번호가 올바른 형태로 작성되지 아니하였습니다.");
+    if (!LoginDataVerifyUtil.checkUserPasswordformat(password)) {
+      throw new PasswordFormatException("비밀번호가 올바른 형태로 작성되지 아니하였습니다.");
     }
 
     if (user == null) {
