@@ -89,6 +89,10 @@ public class User implements Serializable {
         return userID;
     }
 
+    public boolean checkUserID(String userID) {
+        return this.userID.equals(userID);
+    }
+
     public void setUserID(String userID) {
         this.userID = userID;
     }
