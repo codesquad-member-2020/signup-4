@@ -26,4 +26,18 @@ extension String {
         let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
         return !result.isEmpty
     }
+    
+    func validateUpperEngId() -> Bool {
+        let regularExpression = try! NSRegularExpression(pattern: "[A-Z]", options: .anchorsMatchLines)
+        let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
+        return result.isEmpty
+    }
+    
+    func validateSymbolId() -> Bool {
+        let regularExpression = try! NSRegularExpression(pattern: "[`~!@#$%^&*()\\=+\\[{\\}\\\\|;:'\",<.>/?//]", options: .anchorsMatchLines)
+        let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
+        return result.isEmpty
+    }
+    
+    
 }

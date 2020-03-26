@@ -19,6 +19,7 @@
 		AB958D75242B333400C75714 /* ValidationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D74242B333400C75714 /* ValidationLabel.swift */; };
 		AB958D79242B48E500C75714 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D78242B48E500C75714 /* StringExtension.swift */; };
 		AB958D85242BB9E600C75714 /* NextUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D84242BB9E600C75714 /* NextUIButton.swift */; };
+		AB958D88242C8DB000C75714 /* DuplicateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB958D87242C8DB000C75714 /* DuplicateCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		AB958D74242B333400C75714 /* ValidationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationLabel.swift; sourceTree = "<group>"; };
 		AB958D78242B48E500C75714 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AB958D84242BB9E600C75714 /* NextUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextUIButton.swift; sourceTree = "<group>"; };
+		AB958D87242C8DB000C75714 /* DuplicateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		AB958D3C2428FFFE00C75714 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				AB958D86242C8D9100C75714 /* model */,
 				AB958D77242B48CE00C75714 /* util */,
 				AB958D6F2429CF6C00C75714 /* view */,
 				AB958D3D2428FFFE00C75714 /* AppDelegate.swift */,
@@ -154,6 +157,14 @@
 				AB958D78242B48E500C75714 /* StringExtension.swift */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		AB958D86242C8D9100C75714 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AB958D87242C8DB000C75714 /* DuplicateCheck.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB958D88242C8DB000C75714 /* DuplicateCheck.swift in Sources */,
 				AB958D422428FFFE00C75714 /* SignUpViewController.swift in Sources */,
 				AB958D3E2428FFFE00C75714 /* AppDelegate.swift in Sources */,
 				AB958D79242B48E500C75714 /* StringExtension.swift in Sources */,

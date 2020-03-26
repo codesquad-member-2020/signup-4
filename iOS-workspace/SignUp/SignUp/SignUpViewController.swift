@@ -20,6 +20,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var rePasswordTextField: InfoTextField!
     @IBOutlet weak var nameTextField: InfoTextField!
     
+    private var duplicateResponse: DuplicateCheck?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,6 +41,7 @@ class SignUpViewController: UIViewController {
     @IBAction func editingChanged(_ sender: InfoTextField) {
         switch sender {
         case idTextField:
+            vaildateId()
             return
         case passwordTextField:
             vaildatePassword()
@@ -51,6 +54,24 @@ class SignUpViewController: UIViewController {
         default:
             return
         }
+    }
+    
+    private func vaildateId() {
+        idTextField.appearance = .invalid
+        idValidationLabel.status = .wrong
+        guard let id = idTextField.text, id.count <= 20 && id.count >= 5 else {
+            idValidationLabel.text = "5자 이상 20자 이하로 입력해주세요."
+            return
+        }
+        
+        if id.validateUpperEngId() == false || id.validateSymbolId() == false {
+            idValidationLabel.text = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-) 만 사용 가능합니다."
+            return
+        }
+        
+        idTextField.appearance = .normal
+        idValidationLabel.text = "사용 가능한 아이디입니다."
+        idValidationLabel.status = .correct
     }
     
     private func vaildatePassword() {
@@ -104,6 +125,22 @@ class SignUpViewController: UIViewController {
             nameValidationLabel.text = "이름은 필수 입력 항목입니다."
             return
         }
+    }
+}
+
+extension SignUpViewController {
+    func requestDuplicateId(inputId : String) -> Bool {
+        guard let url = URL(string: "https://codesquad-signup4-testapis.herokuapp.com/api/users/duplicate/checkID?id=" + inputId) else { return false}
+        let request = URLRequest(url: url)
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error { return }
+            
+            guard let data = data else { return }
+            guard let responseData = try? JSONDecoder().decode(DuplicateCheck.self, from: data) else { return }
+            self.duplicateResponse = responseData
+        }
+        dataTask.resume()
+        return self.duplicateResponse!.valid
     }
 }
 
