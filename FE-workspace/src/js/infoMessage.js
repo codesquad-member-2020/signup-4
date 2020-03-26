@@ -20,6 +20,5 @@ export const addClassMessage = (el, className) => {
 
 export const removeClassMessage = (el, className) => {
   const element = { sibling: el.parentElement.nextElementSibling };
-  console.log(element);
   return element.sibling.classList.remove(className);
 };
