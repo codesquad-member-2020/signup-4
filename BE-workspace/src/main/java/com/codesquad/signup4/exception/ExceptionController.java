@@ -16,7 +16,7 @@ public class ExceptionController {
         return Result.fail("요청을 잘못 보내셨습니다. ");
     }
 
-    @ResponseStatus(code = HttpStatus.FORBIDDEN)
+    @ResponseStatus(code = HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(value = UnauthorizedException.class)
     public Result UnauthorizedException() {
         return Result.fail("권한이 없습니다.");
