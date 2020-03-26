@@ -1,4 +1,4 @@
-package com.codesquad.signup4.controller.userapi;
+package com.codesquad.signup4.controller.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
