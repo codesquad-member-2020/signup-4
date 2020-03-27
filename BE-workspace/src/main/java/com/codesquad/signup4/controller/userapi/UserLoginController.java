@@ -17,26 +17,30 @@ import java.util.List;
 @RequestMapping("/api/auth")
 public class UserLoginController {
 
-  @Autowired
-  private UserRepository userRepository;
-
-  private void insertTestUser() {
-    User javajigi = User.create("javajigi", "password", "javajigi@gmail.com", "여자", "testUserName", "2020-01-01", "01012341234");
-    List<Interest> interest = new ArrayList<>();
-    interest.add(new Interest("soccer"));
-    interest.add(new Interest("shopping"));
-    javajigi.addInterest(interest);
-    userRepository.save(javajigi);
-  }
-
   @PostMapping("/login")
-  public Result login(String userId, String password, HttpSession httpSession) {
-    insertTestUser();
-    User user = (User) userRepository.findAll();
-    if (userId.equals("javajigi") && password.equals("password")) {
-      httpSession.setAttribute("sessionUser", user);
-      return Result.ok();
+  public ResponseEntity<Result> login(@RequestBody Map<String, String> userData, HttpSession httpSession) {
+    String userID = userData.get("userID");
+    String password = userData.get("password");
+
+    User user = userRepository.findByUserID(userID); //TODO orElseThrow가 왜 안먹지?
+
+    if (!LoginDataVerifyUtil.checkUserIDformat(userID)) {
+      throw new userIDFormatException("아이디가 올바른 형태로 작성되지 아니하였습니다.");
     }
-    return Result.fail("로그인에 실패하였습니다.");
+
+    if (!LoginDataVerifyUtil.checkUserPasswordformat(password)) {
+      throw new PasswordFormatException("비밀번호가 올바른 형태로 작성되지 아니하였습니다.");
+    }
+
+    if (user == null) {
+      throw new UserNotFoundException("입력하신 아이디의 사용자가 존재하지 않습니다."); // orElseThrow 에러가 먹지 않아 별도의 null 체크 로직을 추가함
+    }
+
+    if (!user.checkPassword(password)) {
+      throw new UnauthorizedException("입력하신 비밀번호가 일치하지 않습니다.");
+    }
+
+    httpSession.setAttribute(HttpSessionUtil.USER_SESSION_KEY, user);
+    return new ResponseEntity<>(Result.ok(), HttpStatus.OK);
   }
 }
