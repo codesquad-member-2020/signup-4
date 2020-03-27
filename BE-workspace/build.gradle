@@ -1,21 +1,33 @@
 plugins {
-    id 'java'
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
+group = 'com.codesquad'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.5.RELEASE'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.5.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mustache', version: '2.2.3.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jdbc', version: '2.2.2.RELEASE'
-    compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile ('com.h2database:h2')
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+	testCompile("org.assertj:assertj-core:3.12.2")
+	compileOnly("ch.qos.logback.contrib:logback-jackson:0.1.5")
+	compileOnly("ch.qos.logback.contrib:logback-json-classic:0.1.5")
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+}
+
+test {
+	useJUnitPlatform()
 }
