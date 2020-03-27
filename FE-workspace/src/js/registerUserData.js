@@ -20,5 +20,6 @@ export const JSON_USER_DATA = {
   birthDate: null,
   mobile: null,
   gender: null,
+  email: null,
   interest: null
 }

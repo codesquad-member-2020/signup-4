@@ -138,6 +138,7 @@ const resultSubmit = userData => {
   JSON_USER_DATA.birthDate = `${userData.birthYY}-${userData.birthMM}-${userData.birthDD}`;
   JSON_USER_DATA.mobile = userData.mobile;
   JSON_USER_DATA.gender = userData.gender;
+  JSON_USER_DATA.email = userData.email;
   JSON_USER_DATA.interest = userData.interest;
 
   // const resultJSON = JSON.stringify(JSON_USER_DATA);
