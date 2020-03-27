@@ -1,15 +1,14 @@
 package com.codesquad.signup4.domain;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.codesquad.signup4.dto.UserCreateDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
-@JsonInclude(Include.NON_NULL)
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,6 +46,17 @@ public class User implements Serializable {
         this.userName = userName;
         this.birthDate = birthDate;
         this.mobile = mobile;
+    }
+
+    public User(UserCreateDto createUser) {
+        this.userID = createUser.getUserID();
+        this.password = createUser.getPassword();
+        this.email = createUser.getEmail();
+        this.gender = createUser.getGender();
+        this.userName = createUser.getUserName();
+        this.birthDate = createUser.getBirthDate();
+        this.mobile = createUser.getMobile();
+        this.interest = createUser.getInterest().stream().map(Interest::new).collect(Collectors.toList());
     }
 
     public static User create(String userID, String password, String email, String gender, String userName, String birthDate, String mobile) {
@@ -115,17 +125,6 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public boolean isValid() {
-        return this.userID != null
-                && this.userName != null
-                && this.password != null
-                && this.email != null
-                && this.gender != null
-                && this.birthDate != null
-                && this.mobile != null
-                && this.interest != null;
     }
 
     @Override

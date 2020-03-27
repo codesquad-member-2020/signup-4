@@ -3,11 +3,11 @@ package com.codesquad.signup4.controller.userapi;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.Result;
+import com.codesquad.signup4.dto.UserCreateDto;
 import com.codesquad.signup4.exception.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,18 +19,14 @@ public class APIUserCreateController {
     @Autowired
     UserRepository userRepository;
 
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.initDirectFieldAccess();
-    }
-
     @PostMapping("/create")
-    public Result create(User newUser) {
-
-        if (!newUser.isValid()) {
-            throw new BadRequestException("사용자 가입할 수 없습니다.");
+    public Result create(UserCreateDto createUser) {
+        if (!createUser.isValid()) {
+            throw new BadRequestException();
         }
-        userRepository.save(newUser);
+
+        User user = new User(createUser);
+        userRepository.save(user);
         return Result.ok();
     }
 
