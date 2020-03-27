@@ -1,22 +1,17 @@
 package com.codesquad.signup4.controller.userapi;
 
 import com.codesquad.signup4.controller.utils.HttpSessionUtil;
-import com.codesquad.signup4.domain.Interest;
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.codesquad.signup4.dto.UserInfoDto;
-import com.codesquad.signup4.exception.BadRequestException;
 import com.codesquad.signup4.exception.UnauthorizedException;
 import com.codesquad.signup4.exception.UserNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/api/users")
 public class APIUserDetailController {
