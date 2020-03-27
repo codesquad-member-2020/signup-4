@@ -1,7 +1,6 @@
 package com.codesquad.signup4.domain;
 
 import com.codesquad.signup4.dto.CreateUser;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import org.springframework.data.annotation.Id;
@@ -38,7 +37,6 @@ public class User implements Serializable {
 
     private String mobile;
 
-    @JsonIgnore
     @MappedCollection(idColumn = "user_id", keyColumn = "interest_key")
     private List<Interest> interest;
 
