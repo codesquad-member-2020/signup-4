@@ -22,7 +22,7 @@ public class APIUserCreateController {
     @PostMapping("/create")
     public Result create(UserCreateDto createUser) {
         if (!createUser.isValid()) {
-            throw new BadRequestException();
+            throw new BadRequestException("올바른 접근이 아닙니다.");
         }
 
         User user = new User(createUser);
