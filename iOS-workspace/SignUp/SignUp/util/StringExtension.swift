@@ -38,6 +38,4 @@ extension String {
         let result = regularExpression.matches(in: self, options: [], range: NSRange(location: 0, length: self.count))
         return result.isEmpty
     }
-    
-    
 }

@@ -20,10 +20,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var rePasswordTextField: InfoTextField!
     @IBOutlet weak var nameTextField: InfoTextField!
     
-    private var duplicateResponse: DuplicateCheck?
+    private let dataTask = DataTask()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(setUIIdStatusColor), name: .textFieldChange, object: nil)
     }
     
     @IBAction func editBegin(_ sender: InfoTextField) {
@@ -57,21 +58,21 @@ class SignUpViewController: UIViewController {
     }
     
     private func vaildateId() {
-        idTextField.appearance = .invalid
-        idValidationLabel.status = .wrong
         guard let id = idTextField.text, id.count <= 20 && id.count >= 5 else {
+            idTextField.appearance = .invalid
+            idValidationLabel.status = .wrong
             idValidationLabel.text = "5자 이상 20자 이하로 입력해주세요."
             return
         }
         
         if id.validateUpperEngId() == false || id.validateSymbolId() == false {
+            idTextField.appearance = .invalid
+            idValidationLabel.status = .wrong
             idValidationLabel.text = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-) 만 사용 가능합니다."
             return
         }
         
-        idTextField.appearance = .normal
-        idValidationLabel.text = "사용 가능한 아이디입니다."
-        idValidationLabel.status = .correct
+        dataTask.requestDuplicateId(inputId: id)
     }
     
     private func vaildatePassword() {
@@ -126,21 +127,16 @@ class SignUpViewController: UIViewController {
             return
         }
     }
-}
-
-extension SignUpViewController {
-    func requestDuplicateId(inputId : String) -> Bool {
-        guard let url = URL(string: "https://codesquad-signup4-testapis.herokuapp.com/api/users/duplicate/checkID?id=" + inputId) else { return false}
-        let request = URLRequest(url: url)
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error { return }
-            
-            guard let data = data else { return }
-            guard let responseData = try? JSONDecoder().decode(DuplicateCheck.self, from: data) else { return }
-            self.duplicateResponse = responseData
+    
+    @objc func setUIIdStatusColor(notification: Notification) {
+        guard let notificationInfo = notification.userInfo as? [String: Bool]
+            else { return }
+        if notificationInfo["validStatus"]! {
+            idTextField.appearance = .normal
+            idValidationLabel.text = "사용 가능한 아이디입니다."
+            idValidationLabel.status = .correct
+        } else {
+            idValidationLabel.text = "이미 사용중인 아이디입니다."
         }
-        dataTask.resume()
-        return self.duplicateResponse!.valid
     }
 }
-

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DuplicateCheck: Codable {
-    let valid: Bool
-    let errorMessage: String
+struct DuplicateCheck: Decodable {
+    var valid: Bool
+    var errorMessage: String?
 }
