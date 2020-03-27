@@ -65,7 +65,7 @@
 ## 기타 링크
 
 * [4팀 공식 위키](https://github.com/codesquad-memeber-2020/signup-4/wiki)
-* [데일리 스크럼 및 회고 모음]([https://github.com/codesquad-memeber-2020/signup-4/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC-%EB%B0%8F-%ED%9A%8C%EA%B3%A0-%EB%AA%A8%EC%9D%8C](https://github.com/codesquad-memeber-2020/signup-4/wiki/데일리-스크럼-및-회고-모음))
+* [데일리 스크럼 및 회고 모음](https://github.com/codesquad-memeber-2020/signup-4/wiki/%EB%8D%B0%EC%9D%BC%EB%A6%AC-%EC%8A%A4%ED%81%AC%EB%9F%BC-%EB%B0%8F-%ED%9A%8C%EA%B3%A0-%EB%AA%A8%EC%9D%8C)
 
 ## 4팀 그라운드 룰
 
