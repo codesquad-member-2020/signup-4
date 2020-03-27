@@ -25,11 +25,13 @@ class InfoTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setAppearance(to: .normal)
+        self.autocorrectionType = .no
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setAppearance(to: .normal)
+        self.autocorrectionType = .no
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {

@@ -113,7 +113,7 @@ class SignUpViewController: UIViewController {
             rePwValidationLabel.text = "비밀번호가 일치합니다."
             rePasswordTextField.appearance = .normal
         } else {
-            
+            rePwValidationLabel.status = .wrong
             rePwValidationLabel.text = "비밀번호가 일치하지 않습니다."
             rePasswordTextField.appearance = .invalid
         }

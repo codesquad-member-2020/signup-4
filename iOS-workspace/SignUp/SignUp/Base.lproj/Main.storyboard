@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
-                                <rect key="frame" x="36.5" y="128" width="341" height="358"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="117" width="341" height="340"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-YM-DX1" userLabel="idStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
@@ -51,7 +51,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="35z-hW-8eK" userLabel="passwordStackView">
-                                        <rect key="frame" x="0.0" y="93.5" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="87.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq2-Ph-53F">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -66,7 +66,7 @@
                                                     <constraint firstAttribute="height" constant="38" id="oJj-dt-eLm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vGb-7N-d5s"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUm-ve-N5G"/>
@@ -82,7 +82,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-9V-oe4" userLabel="rePasswordStackView">
-                                        <rect key="frame" x="0.0" y="187" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="175" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t42-3X-QXS">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -97,7 +97,7 @@
                                                     <constraint firstAttribute="height" constant="38" id="LCF-Ch-ioT"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="TJW-kR-waa"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YwS-sO-3Bx"/>
@@ -113,7 +113,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXx-v6-VsD" userLabel="nameStackView">
-                                        <rect key="frame" x="0.0" y="280.5" width="341" height="77.5"/>
+                                        <rect key="frame" x="0.0" y="262.5" width="341" height="77.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPv-Dh-td9">
                                                 <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
@@ -128,7 +128,7 @@
                                                     <constraint firstAttribute="height" constant="38" id="o7A-ka-KMr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="p6t-v5-RVa"/>
                                                     <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="QYC-lY-eAF"/>
@@ -146,15 +146,18 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBA-aG-wsc">
-                                <rect key="frame" x="144" y="67" width="126" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <rect key="frame" x="144" y="64" width="126" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" name="textGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-Hd-BQg" customClass="NextUIButton" customModule="SignUp" customModuleProvider="target">
-                                <rect key="frame" x="182" y="505" width="85" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-Hd-BQg" customClass="NextUIButton" customModule="SignUp" customModuleProvider="target">
+                                <rect key="frame" x="164.5" y="464.5" width="85" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Fu-dd-sfF"/>
+                                    <constraint firstAttribute="width" constant="85" id="F7U-za-O0v"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.33472495340000002" green="0.65433498030000004" blue="0.34121518249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -166,11 +169,13 @@
                         <color key="backgroundColor" red="0.96085983509999995" green="0.96459645029999996" blue="0.96862941979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="pBA-aG-wsc" firstAttribute="centerX" secondItem="GFJ-nK-Slg" secondAttribute="centerX" id="6Sh-sV-lfa"/>
-                            <constraint firstItem="GFJ-nK-Slg" firstAttribute="top" secondItem="pBA-aG-wsc" secondAttribute="bottom" constant="25" id="FTc-sX-CJs"/>
-                            <constraint firstItem="pBA-aG-wsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="HUj-sn-IdH"/>
+                            <constraint firstItem="GFJ-nK-Slg" firstAttribute="top" secondItem="pBA-aG-wsc" secondAttribute="bottom" constant="23" id="FTc-sX-CJs"/>
+                            <constraint firstItem="pBA-aG-wsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HUj-sn-IdH"/>
                             <constraint firstItem="GFJ-nK-Slg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="TcV-is-Go2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GFJ-nK-Slg" secondAttribute="trailing" constant="36.5" id="dzc-i9-H5i"/>
+                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="centerX" secondItem="GFJ-nK-Slg" secondAttribute="centerX" id="fcX-3W-ifT"/>
                             <constraint firstItem="pBA-aG-wsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="lnA-p0-P8m"/>
+                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="top" secondItem="fXx-v6-VsD" secondAttribute="bottom" constant="7.5" id="tQ4-e9-INy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
