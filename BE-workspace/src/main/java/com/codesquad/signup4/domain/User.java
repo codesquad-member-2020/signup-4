@@ -2,10 +2,10 @@ package com.codesquad.signup4.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
@@ -93,6 +93,10 @@ public class User implements Serializable {
         this.userID = userID;
     }
 
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
+    }
+
     public String getPassword() {
         return password;
     }
@@ -107,6 +111,17 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean isValid() {
+        return this.userID != null
+                && this.userName != null
+                && this.password != null
+                && this.email != null
+                && this.gender != null
+                && this.birthDate != null
+                && this.mobile != null
+                && this.interest != null;
     }
 
     @Override
@@ -136,4 +151,5 @@ public class User implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

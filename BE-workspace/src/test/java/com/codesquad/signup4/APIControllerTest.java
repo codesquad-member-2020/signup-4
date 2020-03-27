@@ -1,8 +1,5 @@
 package com.codesquad.signup4;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,14 +12,17 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class APIControllerTest {
 
-  @Autowired
-  private TestRestTemplate testRestTemplate;
+    @Autowired
+    private TestRestTemplate testRestTemplate;
 
-  @LocalServerPort
-  private int port;
+    @LocalServerPort
+    private int port;
 
   @Autowired
   private UserRepository userRepository;
@@ -44,14 +44,22 @@ public class APIControllerTest {
     //	“password” : “password”,
     //	“email” : “javajigi@gmail.com”,
     //	“gender” : “여자”,
-    //	“username” : “testUserName”,
-    //	“birthDate” : “2020-01-01”,
-    //	“mobile” : “01012341234”,
-    //	“interest” : “??”
-    //}
+      //	“username” : “testUserName”,
+      //	“birthDate” : “2020-01-01”,
+      //	“mobile” : “01012341234”,
+      //	“interest” : “??”
+      //}
 
-    assertEquals(javajigi, expectedJavajigi);
-    assertNotNull(createResponseEntity);
-    System.out.println(createResponseEntity);
+      assertEquals(javajigi, expectedJavajigi);
+      assertNotNull(createResponseEntity);
+      System.out.println(createResponseEntity);
   }
+
+    @Test
+    public void createUserApiTest() {
+        String hostUrl = "localhost:8080";
+        String path = "/api/users/create";
+
+
+    }
 }
