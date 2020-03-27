@@ -146,7 +146,7 @@ const resultSubmit = userData => {
 };
 
 const registerRequest = data => {
-  const URL = 'https://cors-anywhere.herokuapp.com/https://codesquad-signup4-featureapis.herokuapp.com/api/users/create';
+  const URL = 'https://codesquad-signup4-featureapis.herokuapp.com/api/users/create';
   fetch(URL, {
     method: 'POST',
     mode: 'cors',
