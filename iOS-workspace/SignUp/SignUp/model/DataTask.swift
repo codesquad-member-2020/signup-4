@@ -13,13 +13,7 @@ class DataTask {
     var dataTask: URLSessionDataTask?
     
     func requestDuplicateId(inputId : String) {
-        /*
-        var urlComponent = URLComponents(string: "https://codesquad-signup4-testapis.herokuapp.com/api/users/duplicate/checkID")
-        urlComponent?.query = "id=\(inputId)"
-        
-        guard let url = urlComponent?.url else { return }
- */
-        guard var urlComponent = URLComponents(string: "https://codesquad-signup4-testapis.herokuapp.com/api/users/duplicate/checkID") else { print("urlComponentfail"); return; }
+        guard var urlComponent = URLComponents(string: "https://codesquad-signup4-featureapis.herokuapp.com/api/users/duplicate/checkID") else { return }
         
         let queryItemToken = URLQueryItem(name: "id", value: inputId)
         urlComponent.queryItems = [queryItemToken]
@@ -29,7 +23,7 @@ class DataTask {
         dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             if let error = error { print(error); return }
             
-            guard let data = data, let responseData = try? JSONDecoder().decode(DuplicateCheck.self, from: data) else { print("fail"); return; }
+            guard let data = data, let responseData = try? JSONDecoder().decode(DuplicateCheck.self, from: data) else { return; }
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .textFieldChange, object: nil, userInfo: ["validStatus":responseData.valid])
             }
