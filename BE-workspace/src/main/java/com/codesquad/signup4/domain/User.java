@@ -1,6 +1,6 @@
 package com.codesquad.signup4.domain;
 
-import com.codesquad.signup4.dto.CreateUser;
+import com.codesquad.signup4.dto.UserCreateDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
@@ -48,7 +48,7 @@ public class User implements Serializable {
         this.mobile = mobile;
     }
 
-    public User(CreateUser createUser) {
+    public User(UserCreateDto createUser) {
         this.userID = createUser.getUserID();
         this.password = createUser.getPassword();
         this.email = createUser.getEmail();
@@ -117,17 +117,6 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public boolean isValid() {
-        return this.userID != null
-                && this.userName != null
-                && this.password != null
-                && this.email != null
-                && this.gender != null
-                && this.birthDate != null
-                && this.mobile != null
-                && this.interest != null;
     }
 
     @Override

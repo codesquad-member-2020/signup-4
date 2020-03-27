@@ -2,7 +2,7 @@ package com.codesquad.signup4.dto;
 
 import java.util.List;
 
-public class CreateUser {
+public class UserCreateDto {
     private String userID;
     private String password;
     private String email;
@@ -74,5 +74,16 @@ public class CreateUser {
 
     public void setInterest(List<String> interest) {
         this.interest = interest;
+    }
+
+    public boolean isValid() {
+        return this.userID != null
+                && this.userName != null
+                && this.password != null
+                && this.email != null
+                && this.gender != null
+                && this.birthDate != null
+                && this.mobile != null
+                && this.interest != null;
     }
 }

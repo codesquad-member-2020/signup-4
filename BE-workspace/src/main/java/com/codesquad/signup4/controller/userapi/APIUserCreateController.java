@@ -2,8 +2,8 @@ package com.codesquad.signup4.controller.userapi;
 
 import com.codesquad.signup4.domain.User;
 import com.codesquad.signup4.domain.UserRepository;
-import com.codesquad.signup4.dto.CreateUser;
 import com.codesquad.signup4.dto.Result;
+import com.codesquad.signup4.dto.UserCreateDto;
 import com.codesquad.signup4.exception.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,13 +20,12 @@ public class APIUserCreateController {
     UserRepository userRepository;
 
     @PostMapping("/create")
-    public Result create(CreateUser createUser) {
-
-        User user = new User(createUser);
-        if (!user.isValid()) {
+    public Result create(UserCreateDto createUser) {
+        if (!createUser.isValid()) {
             throw new BadRequestException();
         }
 
+        User user = new User(createUser);
         userRepository.save(user);
         return Result.ok();
     }
