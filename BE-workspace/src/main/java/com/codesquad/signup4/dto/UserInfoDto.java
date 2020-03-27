@@ -22,6 +22,7 @@ public class UserInfoDto {
       String mobile,
       List<Interest> interest) {
 
+    this.userID = userID;
     this.password = password;
     this.email = email;
     this.gender = gender;
