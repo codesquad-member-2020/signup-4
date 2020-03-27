@@ -59,15 +59,13 @@ class SignUpViewController: UIViewController {
     
     private func vaildateId() {
         guard let id = idTextField.text, id.count <= 20 && id.count >= 5 else {
-            idTextField.appearance = .invalid
-            idValidationLabel.status = .wrong
+            invaildIDStauts()
             idValidationLabel.text = "5자 이상 20자 이하로 입력해주세요."
             return
         }
         
         if id.validateUpperEngId() == false || id.validateSymbolId() == false {
-            idTextField.appearance = .invalid
-            idValidationLabel.status = .wrong
+            //invaildIDStauts()
             idValidationLabel.text = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-) 만 사용 가능합니다."
             return
         }
@@ -136,7 +134,13 @@ class SignUpViewController: UIViewController {
             idValidationLabel.text = "사용 가능한 아이디입니다."
             idValidationLabel.status = .correct
         } else {
+            invaildIDStauts()
             idValidationLabel.text = "이미 사용중인 아이디입니다."
         }
     }
+    
+    private func invaildIDStauts() {
+         idTextField.appearance = .invalid
+         idValidationLabel.status = .wrong
+     }
 }
