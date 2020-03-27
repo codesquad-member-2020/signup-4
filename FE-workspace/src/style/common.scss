@@ -1,0 +1,145 @@
+body {
+  background: $color-gray;
+}
+#header {
+  padding: 50px 0;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: $font-size-extra;
+    span {
+      margin-left: 5px;
+    }
+  }
+  .title {
+    width: 100%;
+  }
+  nav {
+    ul {
+      display: flex;
+    }
+    li {
+      margin-left: 10px;
+    }
+  }
+}
+.inner {
+  width: $inner-width;
+  margin: 0 auto;
+}
+.contents {
+  width: $inner-width;
+  margin: 0 auto;
+  .row {
+    overflow: hidden;
+    margin: 15px 0;
+  }
+  &.main {
+    text-align: center;
+    height: 50vh;
+    margin-top: 20vh;
+    font-size: $font-size-title;
+  }
+}
+#footer {
+  padding: 50px 0;
+  text-align: center;
+  background: $color-gray;
+}
+
+.title {
+  font-size: $font-size-title;
+  color: $color-ci;
+  text-align: center;
+}
+.info-msg {
+  display: block;
+  margin: 5px auto;
+  font-size: $font-size-small;
+  color: $color-ci;
+  &.error {
+    color: $color-error;
+  }
+}
+.btn-wrap {
+  display: flex;
+  justify-content: space-between;
+  &.half {
+    button {
+      width: calc(50% - 5px);
+    }
+  }
+}
+.btn {
+  font-size: $font-size-default;
+  &.btn-reset,
+  &.btn-submit {
+    color: $color-white;
+    border: 0;
+    background: $color-ci;
+  }
+}
+.input-box.birth {
+  display: flex;
+  justify-content: space-between;
+  select {
+    width: 32%;
+  }
+}
+#modal-link {
+  text-decoration: underline;
+  &.active {
+    font-weight: bold;
+  }
+}
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  &.active {
+    display: flex;
+  }
+  .modal-wrap {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    padding: 15px;
+    background: #fff;
+    .modal-title {
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: $font-size-large;
+      letter-spacing: -0.02em;
+    }
+    .modal-contents {
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 15px;
+      height: 170px;
+      border: 1px solid #d5d2d2;
+      h3 {
+        margin-bottom: 5px;
+      }
+      p {
+        margin-bottom: 20px;
+        color: #666;
+        line-height: 1.3;
+        word-break: keep-all;
+      }
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+}

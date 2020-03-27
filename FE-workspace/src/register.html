@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script type="module" src="js/register.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div class="inner">
+          <h1 class="title">회원가입</h1>
+        </div>
+      </div>
+      <div id="container">
+        <div class="contents register">
+          <form id="registerForm" action="">
+            <div class="row">
+              <label for="userID">아이디</label>
+              <span class="input-box"><input type="text" id="userID" name="userID" placeholder="아이디를 입력해주세요. (5~20자 이내)"/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="password">비밀번호</label>
+              <span class="input-box"><input type="password" id="password" name="password" placeholder="영문 대소문자,숫자,특수문자 조합 8자~16자리 입력해주세요."/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="password_confirm">비밀번호 확인</label>
+              <span class="input-box"><input type="password" id="password_confirm" name="password_confirm" placeholder="비밀번호를 재입력해주세요."/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="userName">이름</label>
+              <span class="input-box"><input type="text" id="userName" name="userName" placeholder="이름을 입력해주세요,"/></span>
+            </div>
+            <div class="row">
+              <label for="birthYY">생년월일</label>
+              <span class="input-box birth">
+                <select id="birthYY" name="birthYY"><option value="">년도</option></select>
+                <select id="birthMM" name="birthMM"><option value="">월</option></select>
+                <select id="birthDD" name="birthDD"><option value="">일</option></select>
+              </span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="gender">성별</label>
+              <span class="input-box">
+                <select name="gender" id="gender">
+                  <option value="">성별</option>
+                  <option value="male">남자</option>
+                  <option value="female">여자</option>
+                </select>
+              </span>
+            </div>
+            <div class="row">
+              <label for="email">이메일</label>
+              <span class="input-box"><input type="email" id="email" name="email" placeholder="이메일을 입력해주세요."/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="mobile">휴대전화</label>
+              <span class="input-box"><input type="tel" id="mobile" name="mobile" placeholder="- 없이 입력해주세요. 예) 01012341234"/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <label for="interest">관심사</label>
+              <span class="input-box interest-wrap"><input type="text" id="interest" name="interest" placeholder="3개 이상 입력해주세요."/></span>
+              <span class="info-msg"></span>
+            </div>
+            <div class="row">
+              <a id="modal-link" href="#">약관에 동의합니다. <input type="checkbox" name="agree" id="agree" disabled="disabled"/></a>
+            </div>
+            <div class="row">
+              <div class="btn-wrap half">
+                <button id="form-reset" class="btn btn-reset">초기화</button>
+                <button id="form-submit" class="btn btn-submit">가입하기</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="inner">Signup project #team4 <strong>@codesquad</strong></div>
+      </div>
+      <div id="modal">
+        <div class="modal-wrap">
+          <div class="modal-title">개인정보 수집 및 이용에 대한 안내</div>
+          <div class="modal-container">
+            <div class="modal-contents"></div>
+            <button class="btn-agree" disabled="true">동의</button>
+          </div>
+          <div class="modal-close material-icons">close</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
