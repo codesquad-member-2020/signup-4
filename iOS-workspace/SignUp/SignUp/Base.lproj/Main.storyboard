@@ -172,10 +172,10 @@
                             <constraint firstItem="GFJ-nK-Slg" firstAttribute="top" secondItem="pBA-aG-wsc" secondAttribute="bottom" constant="23" id="FTc-sX-CJs"/>
                             <constraint firstItem="pBA-aG-wsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HUj-sn-IdH"/>
                             <constraint firstItem="GFJ-nK-Slg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="TcV-is-Go2"/>
+                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="top" secondItem="GFJ-nK-Slg" secondAttribute="bottom" constant="7.5" id="Utm-ns-qC5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GFJ-nK-Slg" secondAttribute="trailing" constant="36.5" id="dzc-i9-H5i"/>
                             <constraint firstItem="tb1-Hd-BQg" firstAttribute="centerX" secondItem="GFJ-nK-Slg" secondAttribute="centerX" id="fcX-3W-ifT"/>
                             <constraint firstItem="pBA-aG-wsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="lnA-p0-P8m"/>
-                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="top" secondItem="fXx-v6-VsD" secondAttribute="bottom" constant="7.5" id="tQ4-e9-INy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

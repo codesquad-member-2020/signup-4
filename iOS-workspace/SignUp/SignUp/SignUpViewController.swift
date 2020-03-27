@@ -65,8 +65,8 @@ class SignUpViewController: UIViewController {
         }
         
         if id.validateUpperEngId() == false || id.validateSymbolId() == false {
-            //invaildIDStauts()
-            idValidationLabel.text = "5~20자의 영문 소문자, 숫자와 특수기호(_)(-) 만 사용 가능합니다."
+            invaildIDStauts()
+            idValidationLabel.text = "영문 소문자, 숫자와 특수기호(_)(-) 만 사용 가능합니다."
             return
         }
         
@@ -124,6 +124,9 @@ class SignUpViewController: UIViewController {
             nameValidationLabel.text = "이름은 필수 입력 항목입니다."
             return
         }
+        
+        nameTextField.appearance = .normal
+        nameValidationLabel.textColor = .clear
     }
     
     @objc func setUIIdStatusColor(notification: Notification) {

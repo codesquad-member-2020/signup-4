@@ -32,7 +32,7 @@ class ValidationLabel: UILabel {
     func setStatus(to status: Status) {
         switch status {
         case .editing:
-            self.isHidden = true
+            self.textColor = .clear
         case .correct:
             self.textColor = UIColor(named: "textGreen")
         case .wrong:
