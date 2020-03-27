@@ -139,6 +139,20 @@ const resultSubmit = userData => {
   JSON_USER_DATA.mobile = userData.mobile;
   JSON_USER_DATA.gender = userData.gender;
   JSON_USER_DATA.interest = userData.interest;
-  
-  return JSON.stringify(JSON_USER_DATA);
+
+  // const resultJSON = JSON.stringify(JSON_USER_DATA);
+  registerRequest(JSON_USER_DATA)
+};
+
+const registerRequest = data => {
+  const URL = 'https://cors-anywhere.herokuapp.com/https://codesquad-signup4-featureapis.herokuapp.com/api/users/create';
+  fetch(URL, {
+    method: 'POST',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then((data)=>{
+    console.log(data);
+    console.log('회원가입 전송 완료 !')
+  })
 };
