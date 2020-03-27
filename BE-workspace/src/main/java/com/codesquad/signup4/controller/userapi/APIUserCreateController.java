@@ -63,7 +63,7 @@ public class APIUserCreateController {
 
     public void checkNull(String auditee) {
         if (auditee == null || auditee.equals("")) {
-            throw new BadRequestException();
+            throw new BadRequestException("올바른 값을 입력해주세요.");
         }
     }
 }
