@@ -88,6 +88,12 @@ body {
     width: 32%;
   }
 }
+#modal-link {
+  text-decoration: underline;
+  &.active {
+    font-weight: bold;
+  }
+}
 #modal {
   position: fixed;
   top: 0;
@@ -115,15 +121,24 @@ body {
     }
     .modal-contents {
       overflow-y: auto;
-      padding: 5px;
+      padding: 10px;
       margin-bottom: 15px;
       height: 170px;
       border: 1px solid #d5d2d2;
+      h3 {
+        margin-bottom: 5px;
+      }
+      p {
+        margin-bottom: 20px;
+        color: #666;
+        line-height: 1.3;
+        word-break: keep-all;
+      }
     }
     .modal-close {
       position: absolute;
-      top:15px;
-      right:15px;
+      top: 15px;
+      right: 15px;
       cursor: pointer;
     }
   }

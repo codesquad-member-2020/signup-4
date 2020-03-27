@@ -19,7 +19,10 @@ export const removeTag = (event, tagContainer) => {
   tags.splice(index, 1);
   render(tagContainer);
 };
-
+export const clearTag = (tagContainer) => {
+  tags.length = 0;
+  render(tagContainer)
+}
 const render = (tagContainer) => {
   resetTag();
   tags

@@ -12,3 +12,13 @@ export const STATE_USER_DATA = {
   interest: null,
   agree: null
 };
+
+export const JSON_USER_DATA = {
+  userID: null,
+  password: null,
+  userName: null,
+  birthDate: null,
+  mobile: null,
+  gender: null,
+  interest: null
+}

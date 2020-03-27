@@ -1,7 +1,8 @@
 import { REG_PATTERN, INFO_MESSAGE } from '../util/constant.js';
 import { $select, $selectAll } from '../util/func.js';
-import { STATE_USER_DATA } from './registerUserData.js'
+import { STATE_USER_DATA, JSON_USER_DATA } from './registerUserData.js';
 import { printMessage } from './infoMessage.js';
+import { clearTag } from './registerInterest.js';
 
 export const checkID = (id, target) => {
   const ERROR = 'error';
@@ -57,78 +58,87 @@ export const checkMobile = (mobile, target) => {
 
 export const checkInterest = () => {};
 
-export const checkSubmit = (userData) => {
+export const checkSubmit = userData => {
   for (let [key, value] of Object.entries(userData)) {
-    if(!value) return alertMessage(key);
+    if (!value) return alertMessage(key);
   }
   resultSubmit(userData);
-}
+};
 
-const alertMessage = (key) => {
-  switch(key) {
+const alertMessage = key => {
+  switch (key) {
     case 'userID':
       alert(`${INFO_MESSAGE.userID.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'password':
-      alert(`${INFO_MESSAGE.password.submitMsg}`)
+      alert(`${INFO_MESSAGE.password.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'password_confirm':
-      alert(`${INFO_MESSAGE.password_confirm.submitMsg}`)
+      alert(`${INFO_MESSAGE.password_confirm.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'userName':
-      alert(`${INFO_MESSAGE.userName.submitMsg}`)
+      alert(`${INFO_MESSAGE.userName.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'birthYY':
-      alert(`${INFO_MESSAGE.birthYY.submitMsg}`)
+      alert(`${INFO_MESSAGE.birthYY.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'birthMM':
-      alert(`${INFO_MESSAGE.birthMM.submitMsg}`)
+      alert(`${INFO_MESSAGE.birthMM.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'birthYY':
-      alert(`${INFO_MESSAGE.birthYY.submitMsg}`)
+      alert(`${INFO_MESSAGE.birthYY.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'gender':
-      alert(`${INFO_MESSAGE.gender.submitMsg}`)
+      alert(`${INFO_MESSAGE.gender.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'email':
-      alert(`${INFO_MESSAGE.email.submitMsg}`)
+      alert(`${INFO_MESSAGE.email.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'mobile':
-      alert(`${INFO_MESSAGE.mobile.submitMsg}`)
+      alert(`${INFO_MESSAGE.mobile.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'interest':
-      alert(`${INFO_MESSAGE.interest.submitMsg}`)
+      alert(`${INFO_MESSAGE.interest.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
     case 'agree':
-      alert(`${INFO_MESSAGE.agree.submitMsg}`)
+      alert(`${INFO_MESSAGE.agree.submitMsg}`);
       $select(`#${key}`).focus();
-    break;
+      break;
   }
-}
+};
 
 export const chcekReset = () => {
   if (!confirm('초기화 하시겠습니까?')) return;
   const registerForm = $select('#registerForm');
   registerForm.reset();
   resetData(STATE_USER_DATA);
-}
+  clearTag($select('.interest-wrap'));
+  console.log(STATE_USER_DATA);
+};
 const resetData = data => {
   for (let key in data) {
     data[key] = null;
   }
-}
-const resultSubmit = (userData)=> {
-  console.log('최종 결과 제출')
-  //JSON 으로 담아서 페이지 전송
-}
+};
+const resultSubmit = userData => {
+  JSON_USER_DATA.userID = userData.userID;
+  JSON_USER_DATA.password = userData.password;
+  JSON_USER_DATA.userName = userData.userName;
+  JSON_USER_DATA.birthDate = `${userData.birthYY}-${userData.birthMM}-${userData.birthDD}`;
+  JSON_USER_DATA.mobile = userData.mobile;
+  JSON_USER_DATA.gender = userData.gender;
+  JSON_USER_DATA.interest = userData.interest;
+  
+  return JSON.stringify(JSON_USER_DATA);
+};
