@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="SignUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GFJ-nK-Slg" customClass="SignUpInfoStackView" customModule="SignUp" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="117" width="341" height="340"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-YM-DX1" userLabel="idStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwX-Dg-Tg2">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-TC-QEY" userLabel="idTextField" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="341" height="38"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="oJm-tl-hBC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="6Qq-xi-zvf"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1po-Ql-J9l"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="btA-db-pXW"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crm-63-5YA" userLabel="idValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="35z-hW-8eK" userLabel="passwordStackView">
+                                        <rect key="frame" x="0.0" y="87.5" width="341" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq2-Ph-53F">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdC-x9-KD9" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="341" height="38"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="oJj-dt-eLm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vGb-7N-d5s"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="KUm-ve-N5G"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="asz-TQ-aLt"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-N4-PGb" userLabel="pwValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Jf2-9V-oe4" userLabel="rePasswordStackView">
+                                        <rect key="frame" x="0.0" y="175" width="341" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t42-3X-QXS">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l1u-eF-cgV" userLabel="reWriteTextField" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="341" height="38"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="LCF-Ch-ioT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="TJW-kR-waa"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YwS-sO-3Bx"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="N8K-XC-KRz"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiE-IY-rvF" userLabel="rePwValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fXx-v6-VsD" userLabel="nameStackView">
+                                        <rect key="frame" x="0.0" y="262.5" width="341" height="77.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPv-Dh-td9">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-mz-QTt" userLabel="nameTextField" customClass="InfoTextField" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="21" width="341" height="38"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="o7A-ka-KMr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="editBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="p6t-v5-RVa"/>
+                                                    <action selector="editEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="QYC-lY-eAF"/>
+                                                    <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="8e7-9m-mLx"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="validation Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-A2-xVF" userLabel="nameValidationLabel" customClass="ValidationLabel" customModule="SignUp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="63" width="341" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBA-aG-wsc">
+                                <rect key="frame" x="144" y="64" width="126" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" name="textGreen"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb1-Hd-BQg" customClass="NextUIButton" customModule="SignUp" customModuleProvider="target">
+                                <rect key="frame" x="164.5" y="464.5" width="85" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Fu-dd-sfF"/>
+                                    <constraint firstAttribute="width" constant="85" id="F7U-za-O0v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="0.33472495340000002" green="0.65433498030000004" blue="0.34121518249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="다음" image="greaterthan.circle.fill" catalog="system">
+                                    <color key="titleColor" name="textGreen"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96085983509999995" green="0.96459645029999996" blue="0.96862941979999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pBA-aG-wsc" firstAttribute="centerX" secondItem="GFJ-nK-Slg" secondAttribute="centerX" id="6Sh-sV-lfa"/>
+                            <constraint firstItem="GFJ-nK-Slg" firstAttribute="top" secondItem="pBA-aG-wsc" secondAttribute="bottom" constant="23" id="FTc-sX-CJs"/>
+                            <constraint firstItem="pBA-aG-wsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HUj-sn-IdH"/>
+                            <constraint firstItem="GFJ-nK-Slg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="TcV-is-Go2"/>
+                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="top" secondItem="GFJ-nK-Slg" secondAttribute="bottom" constant="7.5" id="Utm-ns-qC5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GFJ-nK-Slg" secondAttribute="trailing" constant="36.5" id="dzc-i9-H5i"/>
+                            <constraint firstItem="tb1-Hd-BQg" firstAttribute="centerX" secondItem="GFJ-nK-Slg" secondAttribute="centerX" id="fcX-3W-ifT"/>
+                            <constraint firstItem="pBA-aG-wsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="lnA-p0-P8m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="idTextField" destination="cQh-TC-QEY" id="wpV-9y-se9"/>
+                        <outlet property="idValidationLabel" destination="crm-63-5YA" id="uQF-QJ-Sa3"/>
+                        <outlet property="nameTextField" destination="E9G-mz-QTt" id="3fx-hh-UDc"/>
+                        <outlet property="nameValidationLabel" destination="6yi-A2-xVF" id="KW5-Lg-rYD"/>
+                        <outlet property="passwordTextField" destination="jdC-x9-KD9" id="db9-T2-ybK"/>
+                        <outlet property="pwValidationLabel" destination="QPE-N4-PGb" id="VX2-Yt-vdl"/>
+                        <outlet property="rePasswordTextField" destination="l1u-eF-cgV" id="xR6-fd-RY4"/>
+                        <outlet property="rePwValidationLabel" destination="CiE-IY-rvF" id="etg-Po-FxG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="greaterthan.circle.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="textGreen">
+            <color red="0.019607843137254902" green="0.65098039215686276" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
