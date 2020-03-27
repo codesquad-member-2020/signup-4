@@ -15,9 +15,9 @@
 
 ## API 링크
 
-* [회원가입 공식 API 문서]([https://github.com/codesquad-memeber-2020/signup-4/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-4%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-API-%EC%95%88%EB%82%B4](https://github.com/codesquad-memeber-2020/signup-4/wiki/회원가입-4팀-프로젝트-API-안내))
+* [공식 API 문서](https://github.com/codesquad-memeber-2020/signup-4/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-4%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-API-%EC%95%88%EB%82%B4)
 * [Swagger API 문서 자동화 툴 링크](https://codesquad-signup4-featureapis.herokuapp.com/swagger-ui.html)
-* [회원가입 테스트 데이터 API 문서]([https://github.com/codesquad-memeber-2020/signup-4/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-4%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-API-%EC%95%88%EB%82%B4](https://github.com/codesquad-memeber-2020/signup-4/wiki/회원가입-4팀-프로젝트-테스트-API-안내))
+* [테스트 데이터 API 문서](https://github.com/codesquad-memeber-2020/signup-4/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-4%ED%8C%80-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%85%8C%EC%8A%A4%ED%8A%B8-API-%EC%95%88%EB%82%B4)
 
 ### 테스트 아이디
 
