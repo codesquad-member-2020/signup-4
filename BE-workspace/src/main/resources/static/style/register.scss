@@ -1,0 +1,33 @@
+.register {
+  width: $inner-width-small;
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+  }
+  .interest-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 50px;
+    padding: 0 5px;
+    border: 1px solid #d5d2d2;
+    border-radius: 4px;
+    background: $color-white;
+    input {
+      flex: 1;
+      padding: 0 10px;
+      border: 0;
+      outline: 0;
+    }
+    .tag {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      margin: 5px;
+      border: 1px solid #d5d2d2;
+      border-radius: 2px;
+      background: #f2f4f7;
+    }
+  }
+}
