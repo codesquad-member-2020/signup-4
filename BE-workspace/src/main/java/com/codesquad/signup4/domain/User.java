@@ -1,8 +1,6 @@
 package com.codesquad.signup4.domain;
 
 import com.codesquad.signup4.dto.CreateUser;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 
@@ -11,7 +9,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-@JsonInclude(Include.NON_NULL)
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
